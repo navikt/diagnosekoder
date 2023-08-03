@@ -1,6 +1,23 @@
 # diagnosekoder
 
-### Oppdatering av diagnosekoder
+## Bruk diagnosekodene i ditt prosjekt
+
+### node
+
+Du må allerede ha satt opp appen din til å hente @navikt-scopet fra github packages.
+
+```
+yarn add @navikt/diagnosekoder
+```
+
+eller
+
+```
+npm install @navikt/diagnosekoder
+```
+
+
+## Oppdatering av diagnosekoder
 
 Diagnosekoder, både ICD10 og ICPC2, får vi fra [Direktorated for e-helse](https://www.ehelse.no/kodeverk-og-terminologi/ICD-10-og-ICD-11).
 
@@ -13,6 +30,8 @@ const xlsxs = {
   icpc2: "oppdatert-url.xlsx",
 };
 ```
+
+Når URL-ene er oppdatert, kan man følge instruksjonene under for å generere nye koder. Disse genererte endringene kan sjekkes inn (gjerne åpne PR). Når dette pushes til main vil det automatisk bli releaset nye versjoner av diagnosekodene.
 
 ## Installasjon
 
