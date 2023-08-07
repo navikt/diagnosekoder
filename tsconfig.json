@@ -3,19 +3,16 @@
     "lib": ["ESNext"],
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
     "strict": true,
-    "downlevelIteration": true,
+    "noImplicitAny": true,
     "skipLibCheck": true,
-    "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "noEmit": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "resolveJsonModule": true
   }
 }

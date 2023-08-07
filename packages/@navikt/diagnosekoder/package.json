@@ -1,0 +1,31 @@
+{
+  "name": "@navikt/diagnosekoder",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Provides icd10 and icpc2 diagnose codes transformed from excel files published by ehelse.no",
+  "keywords": [
+    "diagnosekode",
+    "icd-10",
+    "icpc-2",
+    "icd10"
+  ],
+  "author": "https://github.com/navikt",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "clean": "rm -rf ./lib/*",
+    "build": "npm run clean && tsc"
+  },
+  "exports": {
+    "./*": "./lib/*.js",
+    "./*.json": "./lib/*.json"
+  },
+  "typesVersions": {
+    "*": {"*":  ["./lib/*"]}
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}

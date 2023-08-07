@@ -1,10 +1,20 @@
 # diagnosekoder
 
+Dette prosjektet publiserer npm pakke som inneholder diagnosekoder av type **ICD-10** og **ICPC-2**.
+
+Disse brukes i diverse systemet utviklet i NAV.
+
+Informasjonen (diagnosekodene) blir hentet fra https://www.ehelse.no/kodeverk-og-terminologi
+
+Det blir vanligvis publisert oppdatert versjon av diagnosekodene hvert år. Når det skjer vil vi publisere ny pakkeversjon.
+
+Versjonsnr vil følge semver, det vil si at vanlige årlige oppdateringer som er bakoverkompatible blir oppdatert med minor versjonsnr.
+
 ## Bruk diagnosekodene i ditt prosjekt
 
-### node
+### typescript/javascript
 
-Du må allerede ha satt opp appen din til å hente @navikt-scopet fra github packages.
+Du må allerede ha satt opp prosjektet ditt til å hente @navikt-scopet fra github packages.
 
 ```
 yarn add @navikt/diagnosekoder
@@ -16,31 +26,43 @@ eller
 npm install @navikt/diagnosekoder
 ```
 
+Etter installasjon kan diagnosekoder importeres og brukes slik:
+
+```typescript
+import ICD10 from '@navikt/diagnosekoder/ICD10';
+import ICPC2 from '@navikt/diagnosekoder/ICPC2';
+
+const myIcd10 = ICD10;
+const myIcpc2 = ICPC2;
+
+```
 
 ## Oppdatering av diagnosekoder
 
-Diagnosekoder, både ICD10 og ICPC2, får vi fra [Direktorated for e-helse](https://www.ehelse.no/kodeverk-og-terminologi/ICD-10-og-ICD-11).
+ICD-10 Diagnosekoder hentes fra [Direktorated for e-helse](https://www.ehelse.no/kodeverk-og-terminologi/ICD-10-og-ICD-11).
+ICPC-2 Diagnosekoder hentes fra [Direktorated for e-helse](https://www.ehelse.no/kodeverk-og-terminologi/ICPC-2).
 
 Det kommer normalt ny versjon av diagnosekodene hvert år.
-Url som må oppdateres i koden ser slik ut:
+Url som må oppdateres i koden ligger i _packages/diagnosekode-generator/src/generator.ts_:
 
 ```typescript
-const xlsxs = {
+const urls = {
   icd10: "oppdatert-url.xlsx",
   icpc2: "oppdatert-url.xlsx",
 };
 ```
 
-Når URL-ene er oppdatert, kan man følge instruksjonene under for å generere nye koder. Disse genererte endringene kan sjekkes inn (gjerne åpne PR). Når dette pushes til main vil det automatisk bli releaset nye versjoner av diagnosekodene.
+## Generering av nye koder
 
-## Installasjon
+Kjør _generate_ script i _packages/diagnosekode-generator_ for å generere nye json filer i _packages/@navikt/diagnosekoder/src/_.
 
-1. Installer `bun`: https://bun.sh/docs/installation
-2. Kjør `bun install`
+Bygg (og publiser) deretter _@navikt/diagnosekoder_ pakken.
 
-## Generer nye koder
-
-1. Kjør `bun run gen`
+```shell
+npm install --workspaces && 
+npm run generate --workspace=diagnosekode-generator &&
+npm run build --workspace=@navikt/diagnosekoder
+```
 
 ## Henvendelser
 
