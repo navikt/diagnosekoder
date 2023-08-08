@@ -24,7 +24,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@navikt/diagnosekoder": "^2.0.0",
+    "@navikt/diagnosekoder": "^1.1.0",
     "node-xlsx": "^0.23.0"
   },
   "devDependencies": {

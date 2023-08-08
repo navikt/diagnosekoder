@@ -1,0 +1,71 @@
+name: Generate diagnose codes.
+# Avoid running more than one of these at the same time
+concurrency:
+  group: generate
+  cancel-in-progress: true
+on:
+  workflow_dispatch:
+    inputs:
+      icd10-url:
+        type: string
+        description: New URL to use for icd10 diagnosekoder.
+        required: false
+      icpc2-url:
+        type: string
+        description: New URL to use for icpc2 diagnosekoder.
+        required: false
+      version-increment:
+        type: choice
+        options:
+          - ""
+          - patch
+          - year
+        default: ""
+        description: >
+          Choose if the package version should be incremented. Use "year" when there is a new yearly release of 
+          diagnose codes. Choose patch for other non-breaking changes. Leave empty to not increment version.
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: 'npm'
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@navikt"
+      # If workflow is started manually and user inputs a new url config, write it to the repo before generating codes.
+      - name: Write icd10 url config
+        if: "${{ github.event.inputs.icd10-url != '' }}"
+        run: echo "${{ github.event.inputs.icd10-url }}" > icd10.url.txt
+        working-directory: ./configs
+      - name: Write icpc2 url config
+        if: "${{ github.event.inputs.icpc2-url != '' }}"
+        run: echo "${{ github.event.inputs.icpc2-url }}" > icpc2.url.txt
+        working-directory: ./configs
+      - name: Install dependencies
+        run: npm ci --workspaces
+      - run: npm run build --workspace=@navikt/diagnosekoder # Because diagnosekode-generator depends on this
+      - name: Generate
+        run: npm run generate --workspace=diagnosekode-generator
+        # Test generated diagnosekoder
+      - name: Test
+        run: npm run test --workspace=@navikt/diagnosekoder
+      - name: Increment minor version
+        if: github.event.inputs.version-increment == 'year'
+        run: npm version minor --workspace=@navikt/diagnosekoder
+      - name: Increment patch version
+        if: github.event.inputs.version-increment == 'patch'
+        run: npm version patch --workspace=@navikt/diagnosekoder
+      - name: Commit and push changed files
+        # We want commits to be attributed to the use initiating the workflow
+        env:
+          GIT_USER_NAME: "${{ github.actor }}"
+          GIT_USER_EMAIL: "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+        run: |
+          git config --global user.email "$GIT_USER_EMAIL"
+          git config --global user.name "$GIT_USER_NAME"
+          git diff --quiet || (git add -A && git commit -m "new diagnosekoder generated")
+          git push
