@@ -51,11 +51,11 @@ Urler som kodegenerator bruker må da oppdateres og det må publiseres ny pakkev
 #### Via Github Actions
 
 1. Opprett en ny branch på repoet.
-2. Kjør [github action workflow](https://github.com/navikt/diagnosekoder/actions) _Generate new diagnose codes_ på ny branch.
+2. Kjør github action workflow [Generate diagnose codes](https://github.com/navikt/diagnosekoder/actions/workflows/generate-codes.yml) på ny branch.
    - Fyll inn nye url adresser i input feltene som da kommer frem, og velg om/hvordan versjonsnr skal oppdateres. 
 3. Lag PR med endringene action generer fra branch til master
 4. Review og merge PR til master
-5. Kjør [github action workflow](https://github.com/navikt/diagnosekoder/actions) _Publish diagnose codes_ på master.
+5. Kjør github action workflow [Publish @navikt/diagnosekoder npm](https://github.com/navikt/diagnosekoder/actions/workflows/publish.yml) på master. Dette publiserer ny versjon av npm pakken i github registry.
 
 #### Lokalt
 Hvis man ikke vil gjøre det via github actions kan nye koder og versjonsoppdatering også gjøres lokalt:
