@@ -40,9 +40,18 @@ jobs:
       - run: npm run build --workspace=@navikt/diagnosekoder # Because diagnosekode-generator depends on this
       - name: Generate
         run: npm run generate --workspace=diagnosekode-generator
+
         # Test generated diagnosekoder
-      - name: Test
+      - name: Test javascript package
         run: npm run test --workspace=@navikt/diagnosekoder
+
+      - name: Test java package
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: |
+            test
+          build-root-directory: java/diagnosekoder
+
       - name: Commit and push changed files
         # We want commits to be attributed to the use initiating the workflow
         env:
