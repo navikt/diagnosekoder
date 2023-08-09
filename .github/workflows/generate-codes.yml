@@ -14,16 +14,6 @@ on:
         type: string
         description: New URL to use for icpc2 diagnosekoder.
         required: false
-      version-increment:
-        type: choice
-        options:
-          - ""
-          - patch
-          - year
-        default: ""
-        description: >
-          Choose if the package version should be incremented. Use "year" when there is a new yearly release of 
-          diagnose codes. Choose patch for other non-breaking changes. Leave empty to not increment version.
 
 jobs:
   generate:
@@ -53,12 +43,6 @@ jobs:
         # Test generated diagnosekoder
       - name: Test
         run: npm run test --workspace=@navikt/diagnosekoder
-      - name: Increment minor version
-        if: github.event.inputs.version-increment == 'year'
-        run: npm version minor --workspace=@navikt/diagnosekoder
-      - name: Increment patch version
-        if: github.event.inputs.version-increment == 'patch'
-        run: npm version patch --workspace=@navikt/diagnosekoder
       - name: Commit and push changed files
         # We want commits to be attributed to the use initiating the workflow
         env:
