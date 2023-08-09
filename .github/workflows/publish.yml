@@ -1,4 +1,4 @@
-name: Publish @navikt/diagnosekoder npm
+name: Publish java and npm packages
 concurrency: publish
 on:
   workflow_dispatch:
