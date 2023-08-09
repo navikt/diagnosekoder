@@ -63,7 +63,7 @@ jobs:
           build-root-directory: java/diagnosekoder
 
       # Test packages after version increment
-        run: npm run test --workspace=@navikt/diagnosekoder
+      - run: npm run test --workspace=@navikt/diagnosekoder
 
       - name: Test java package
         uses: gradle/gradle-build-action@v2
