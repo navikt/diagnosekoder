@@ -166,4 +166,4 @@ dist
 
 # intellij
 .idea/
-/diagnosekoder.iml
+/*.iml
