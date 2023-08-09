@@ -21,12 +21,10 @@ jobs:
   increment:
     runs-on: ubuntu-latest
     env:
-      MAJOR_VERSION: 1
-      NEW_YEAR_VERSION: "$MAJOR_VERSION.${{ github.event.inputs.year }}.0"
+      # This is what the version is set to when specifying yearly version increment
+      NEW_YEAR_VERSION: "1.${{ github.event.inputs.year }}.0"
 
     steps:
-      - run: |
-          echo "new year version: $NEW_YEAR_VERSION"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -50,7 +48,8 @@ jobs:
         with:
           arguments: |
             incrementVersion
-            -PoverrideVersion=$NEW_YEAR_VERSION
+            -PoverrideVersion=${{ env.NEW_YEAR_VERSION }}
+          build-root-directory: java/diagnosekoder
 
       - name: Increment patch version in java package
         if: github.event.inputs.version-increment == 'patch'
@@ -58,6 +57,7 @@ jobs:
         with:
           arguments: |
             incrementVersion
+          build-root-directory: java/diagnosekoder
 
       - name: Commit and push changed files
         # We want commits to be attributed to the use initiating the workflow
