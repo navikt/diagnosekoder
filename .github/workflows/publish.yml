@@ -15,9 +15,21 @@ jobs:
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
       - run: npm ci --workspace=@navikt/diagnosekoder
       - run: npm run test --workspace=@navikt/diagnosekoder
       - run: npm run build --workspace=@navikt/diagnosekoder
+
+      - name: Test java package
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: |
+            test
+          build-root-directory: java/diagnosekoder
+
       - name: publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
