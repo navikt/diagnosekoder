@@ -32,7 +32,10 @@ jobs:
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
-
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
 
       - name: Set new minor version in javascript package
         if: github.event.inputs.version-increment == 'year' && github.event.inputs.year != ''
