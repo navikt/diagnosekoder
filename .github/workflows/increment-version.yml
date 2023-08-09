@@ -80,5 +80,5 @@ jobs:
         run: |
           git config --global user.email "$GIT_USER_EMAIL"
           git config --global user.name "$GIT_USER_NAME"
-          git diff --quiet || (git add -A && git commit -m "new diagnosekoder generated")
+          git diff --quiet || (git add -A && git commit -m "package versions incremented")
           git push
