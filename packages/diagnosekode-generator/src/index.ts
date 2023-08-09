@@ -3,6 +3,8 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import resolveRunDir from "./resolveRunDir.js";
 import {readUrlConfigs} from "./config.js";
+import ICD10Diagnosekode from "@navikt/diagnosekoder/ICD10Diagnosekode";
+import ICPC2Diagnosekode from "@navikt/diagnosekoder/ICPC2Diagnosekode";
 
 /**
  * Resolves the path to the @navikt/diagnosekoder npm package src dir, where the generated diagnosekode json files for
@@ -13,19 +15,40 @@ function resolveTypescriptOutputDir() {
     return path.resolve(path.relative(runDir, '@navikt/diagnosekoder/src'));
 }
 
-function resolveOutputPaths() {
-    const tsOutDir = resolveTypescriptOutputDir();
-    const icd10Path = path.resolve(tsOutDir, 'ICD10.json')
-    const icpc2Path = path.resolve(tsOutDir, 'ICPC2.json')
-    return {icd10Path, icpc2Path}
+function resolveJavaOutputDir() {
+    const runDir = resolveRunDir()
+    return path.resolve(path.relative(runDir, '../java/diagnosekoder/src/main/resources/'))
+}
+
+function resolveOutputFilePaths(dirPath: string) {
+    const icd10OutputPath = path.resolve(dirPath, 'ICD10.json')
+    const icpc2OutputPath = path.resolve(dirPath, 'ICPC2.json')
+    return {icd10OutputPath, icpc2OutputPath}
+}
+
+function jsonStringify(value: any): string {
+    return JSON.stringify(value, undefined, 4)
+}
+
+async function writeOutput(outputDirPath: string, icd10: ICD10Diagnosekode[], icpc2: ICPC2Diagnosekode[]) {
+    const {icd10OutputPath, icpc2OutputPath} = resolveOutputFilePaths(outputDirPath)
+    await fs.writeFile(icd10OutputPath, jsonStringify(icd10))
+    await fs.writeFile(icpc2OutputPath, jsonStringify(icpc2))
+}
+
+async function writeTypescriptOutput(icd10: ICD10Diagnosekode[], icpc2: ICPC2Diagnosekode[]) {
+    await writeOutput(resolveTypescriptOutputDir(), icd10, icpc2)
+}
+
+async function writeJavaOutput(icd10: ICD10Diagnosekode[], icpc2: ICPC2Diagnosekode[]) {
+    await writeOutput(resolveJavaOutputDir(), icd10, icpc2)
 }
 
 async function main() {
     const urls = await readUrlConfigs();
     const [icd10, icpc2] = await Promise.all([generateICD10(urls), generateICPC2(urls)]);
-    const {icd10Path, icpc2Path} = resolveOutputPaths()
-    await fs.writeFile(icd10Path, JSON.stringify(icd10, undefined, 4))
-    await fs.writeFile(icpc2Path, JSON.stringify(icpc2, undefined, 4))
+    await writeTypescriptOutput(icd10, icpc2)
+    await writeJavaOutput(icd10, icpc2)
 }
 
 main();
