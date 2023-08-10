@@ -50,7 +50,7 @@ jobs:
         run: npm run test --workspace=@navikt/diagnosekoder
 
       - name: Test java package
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v2.7
         with:
           arguments: |
             test
