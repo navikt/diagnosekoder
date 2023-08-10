@@ -47,7 +47,7 @@ jobs:
 
       - name: Set new minor version in java package
         if: github.event.inputs.version-increment == 'year' && github.event.inputs.year != ''
-        uses: gradle/gradle-build-action@v2.7
+        uses: gradle/gradle-build-action@v2.7.0
         with:
           arguments: |
             incrementVersion
@@ -56,7 +56,7 @@ jobs:
 
       - name: Increment patch version in java package
         if: github.event.inputs.version-increment == 'patch'
-        uses: gradle/gradle-build-action@v2.7
+        uses: gradle/gradle-build-action@v2.7.0
         with:
           arguments: |
             incrementVersion
@@ -66,7 +66,7 @@ jobs:
       - run: npm run test --workspace=@navikt/diagnosekoder
 
       - name: Test java package
-        uses: gradle/gradle-build-action@v2.7
+        uses: gradle/gradle-build-action@v2.7.0
         with:
           arguments: |
             test
