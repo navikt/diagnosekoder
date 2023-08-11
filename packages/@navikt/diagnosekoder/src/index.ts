@@ -1,0 +1,5 @@
+export * from './Diagnosekode.js'
+export * from './ICD10.js'
+export * from './ICD10Diagnosekode.js'
+export * from './ICPC2.js'
+export * from './ICPC2Diagnosekode.js'

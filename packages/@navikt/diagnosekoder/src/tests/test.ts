@@ -1,6 +1,6 @@
-import ICD10 from "../ICD10.js";
-import ICPC2 from "../ICPC2.js";
-import Diagnosekode from "../Diagnosekode.js";
+import {ICPC2} from "../ICPC2.js";
+import {ICD10} from "../ICD10.js";
+import {Diagnosekode} from "../Diagnosekode.js";
 
 const MIN_ICD10_COUNT = 19_600
 const MAX_ICD10_COUNT = 40_000

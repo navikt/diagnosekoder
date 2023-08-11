@@ -1,8 +1,8 @@
-import Diagnosekode from "./Diagnosekode.js";
+import {type Diagnosekode} from "./Diagnosekode.js";
 
 const icd10 = Symbol('icd10');
 
-export default interface ICD10Diagnosekode extends Diagnosekode {
+export interface ICD10Diagnosekode extends Diagnosekode {
     // Just a marker to make type explicit and avoid accidental mixing with ICPC2Diagnosekode.
     // Being a symbol key, it will also be removed when jsonifying the object, avoiding sending unneccessary bytes over
     // the network.

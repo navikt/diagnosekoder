@@ -1,4 +1,4 @@
-export default interface Diagnosekode {
+export interface Diagnosekode {
     readonly code: string;
     readonly text: string;
 }

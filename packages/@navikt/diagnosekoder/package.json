@@ -14,23 +14,18 @@
   "directories": {
     "lib": "lib"
   },
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./lib/*",
-    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "rollup:cjs": "rollup --config rollup.config.mjs",
+    "build": "npm run clean && tsc -p tsconfig.build.json && npm run rollup:cjs",
     "test": "tsc -p tsconfig.json && NODE_NO_WARNINGS=1 node lib/tests/test.js"
   },
-  "exports": {
-    "./*": "./lib/*.js",
-    "./*.json": "./lib/*.json"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./lib/*"
-      ]
-    }
-  },
   "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "rollup": "^3.28.0",
     "typescript": "^5.1.6"
   }
 }

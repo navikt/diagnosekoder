@@ -1,8 +1,8 @@
-import Diagnosekode from "./Diagnosekode.js";
+import {type Diagnosekode} from "./Diagnosekode.js";
 
 const icpc2 = Symbol('icpc2')
 
-export default interface ICPC2Diagnosekode extends Diagnosekode {
+export interface ICPC2Diagnosekode extends Diagnosekode {
     readonly [icpc2]: undefined; // Just a marker to make type explicit
 }
 
