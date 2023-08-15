@@ -1,8 +1,7 @@
 import xlsx from "node-xlsx";
 import {icpc2ProcessCodes} from "./icpc2processCodes.js";
-import ICPC2Diagnosekode, {toIcpc2Diagnosekode} from "@navikt/diagnosekoder/ICPC2Diagnosekode";
-import {toDiagnosekode} from "@navikt/diagnosekoder/Diagnosekode";
-import ICD10Diagnosekode, {toIcd10Diagnosekode} from "@navikt/diagnosekoder/ICD10Diagnosekode";
+import {ICD10Diagnosekode, ICPC2Diagnosekode, toIcd10Diagnosekode, toIcpc2Diagnosekode} from "@navikt/diagnosekoder";
+import {toDiagnosekode} from "@navikt/diagnosekoder";
 import type {Urls} from "./config.js";
 
 export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {

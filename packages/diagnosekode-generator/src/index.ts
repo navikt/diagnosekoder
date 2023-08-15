@@ -3,8 +3,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import resolveRunDir from "./resolveRunDir.js";
 import {readUrlConfigs} from "./config.js";
-import ICD10Diagnosekode from "@navikt/diagnosekoder/ICD10Diagnosekode";
-import ICPC2Diagnosekode from "@navikt/diagnosekoder/ICPC2Diagnosekode";
+import {ICD10Diagnosekode, ICPC2Diagnosekode} from "@navikt/diagnosekoder";
 
 /**
  * Resolves the path to the @navikt/diagnosekoder npm package src dir, where the generated diagnosekode json files for
