@@ -36,7 +36,9 @@ object Diagnosekoder {
     ) : DiagnosekodeType {
     }
 
+    @JvmField
     val icd10 = loadCodes(Diagnosekoder::class.java.getResourceAsStream("/ICD10.json")!!, Array<ICD10>::class)
+    @JvmField
     val icpc2 = loadCodes(Diagnosekoder::class.java.getResourceAsStream("/ICPC2.json")!!, Array<ICPC2>::class)
 
     inline fun <reified T : DiagnosekodeType> loadCodes(jsonResource: InputStream, inputType: KClass<Array<T>>) =
