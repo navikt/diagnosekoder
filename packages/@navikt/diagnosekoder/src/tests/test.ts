@@ -1,6 +1,7 @@
 import {ICPC2} from "../ICPC2.js";
 import {ICD10} from "../ICD10.js";
 import {Diagnosekode} from "../Diagnosekode.js";
+import {icd10SearchTest, mockSearchTest} from "./DiagnosekodeSearcher.test.js";
 
 const MIN_ICD10_COUNT = 19_600
 const MAX_ICD10_COUNT = 40_000
@@ -64,6 +65,8 @@ const smoketestIcpc2 = () => {
 function test() {
     smoketestIcd10()
     smoketestIcpc2()
+    mockSearchTest()
+    icd10SearchTest()
 }
 
 test()
