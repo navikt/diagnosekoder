@@ -4,6 +4,9 @@ concurrency:
   group: generate
   cancel-in-progress: true
 on:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       icd10-url:
@@ -22,7 +25,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "21"
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
@@ -57,6 +60,8 @@ jobs:
           build-root-directory: java/diagnosekoder
 
       - name: Commit and push changed files
+        # Only do this if workflow was started from manual dispatch:
+        if: "${{ github.event.name == 'workflow_dispatch' }}"
         # We want commits to be attributed to the use initiating the workflow
         env:
           GIT_USER_NAME: "${{ github.actor }}"
