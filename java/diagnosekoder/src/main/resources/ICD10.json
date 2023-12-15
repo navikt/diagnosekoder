@@ -1673,7 +1673,7 @@
     },
     {
         "code": "B04",
-        "text": "Apekopper"
+        "text": "Mpox (apekopper)"
     },
     {
         "code": "B050",
@@ -17393,27 +17393,27 @@
     },
     {
         "code": "J300",
-        "text": "Vasomotorisk rinitt"
+        "text": "Vasomotorisk rhinitt"
     },
     {
         "code": "J301",
-        "text": "Allergisk rinitt som skyldes pollen"
+        "text": "Allergisk rhinitt som skyldes pollen"
     },
     {
         "code": "J302",
-        "text": "Annen sesongavhengig allergisk rinitt"
+        "text": "Annen sesongavhengig allergisk rhinitt"
     },
     {
         "code": "J303",
-        "text": "Annen allergisk rinitt"
+        "text": "Annen allergisk rhinitt"
     },
     {
         "code": "J304",
-        "text": "Uspesifisert allergisk rinitt"
+        "text": "Uspesifisert allergisk rhinitt"
     },
     {
         "code": "J310",
-        "text": "Kronisk rinitt"
+        "text": "Kronisk rhinitt"
     },
     {
         "code": "J311",
@@ -24905,7 +24905,7 @@
     },
     {
         "code": "M161",
-        "text": "Primær hofteleddsartrose, uten oppl. om bilateral manifest."
+        "text": "Annen primær hofteleddsartrose"
     },
     {
         "code": "M162",
@@ -26661,7 +26661,7 @@
     },
     {
         "code": "M350",
-        "text": "Sicca-syndrom"
+        "text": "Sjögrens syndrom"
     },
     {
         "code": "M351",
@@ -41569,7 +41569,7 @@
     },
     {
         "code": "P961",
-        "text": "Abst.symp. nyfødt s. sk. mors bruk av vanedannende legem."
+        "text": "Abstinens nyfødt pga.mors bruk av psykoaktive legem./stoffer"
     },
     {
         "code": "P962",
@@ -67977,663 +67977,663 @@
     },
     {
         "code": "W8n0a",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Industri"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Industri"
     },
     {
         "code": "W8n0b",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Bygg/anl"
     },
     {
         "code": "W8n0c",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Olje/gassutv"
     },
     {
         "code": "W8n0d",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Jord/skogbr"
     },
     {
         "code": "W8n0e",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Fiske/fangst"
     },
     {
         "code": "W8n0f",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Forsvar"
     },
     {
         "code": "W8n0g",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;Politi/fengsel"
     },
     {
         "code": "W8n0h",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Annen næring"
     },
     {
         "code": "W8n0i",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;Ukj/ikke spes næring"
     },
     {
         "code": "W8n0j",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Utdann"
     },
     {
         "code": "W8n0k",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Verneplikt"
     },
     {
         "code": "W8n0m",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n0p",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Annen idrett"
     },
     {
         "code": "W8n0r",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Annen aktivitet"
     },
     {
         "code": "W8n0y",
-        "text": "Ulykke el/ionis strål/trykk;bolig;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;bolig;Ukjent aktivitet"
     },
     {
         "code": "W8n1a",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Industri"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Industri"
     },
     {
         "code": "W8n1b",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Bygg/anl"
     },
     {
         "code": "W8n1c",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;Olje/gassutv"
     },
     {
         "code": "W8n1d",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Jord/skogbr"
     },
     {
         "code": "W8n1e",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Fiske/fangst"
     },
     {
         "code": "W8n1f",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Forsvar"
     },
     {
         "code": "W8n1g",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Politi/fengsel"
     },
     {
         "code": "W8n1h",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Annen næring"
     },
     {
         "code": "W8n1i",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Ukj/ikke spes næring"
     },
     {
         "code": "W8n1j",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Utdann"
     },
     {
         "code": "W8n1k",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Verneplikt"
     },
     {
         "code": "W8n1m",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n1p",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Annen idrett"
     },
     {
         "code": "W8n1r",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Annen aktivitet"
     },
     {
         "code": "W8n1y",
-        "text": "Ulykke el/ionis strål/trykk;veitrafikk;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;veitrafikk;Ukjent aktivitet"
     },
     {
         "code": "W8n2a",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Industri"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Industri"
     },
     {
         "code": "W8n2b",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Bygg/anl"
     },
     {
         "code": "W8n2c",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Olje/gassutv"
     },
     {
         "code": "W8n2d",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Jord/skogbr"
     },
     {
         "code": "W8n2e",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Fiske/fangst"
     },
     {
         "code": "W8n2f",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Forsvar"
     },
     {
         "code": "W8n2g",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Politi/fengsel"
     },
     {
         "code": "W8n2h",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Annen næring"
     },
     {
         "code": "W8n2i",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Ukj/ikke spes næring"
     },
     {
         "code": "W8n2j",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Utdann"
     },
     {
         "code": "W8n2k",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Verneplikt"
     },
     {
         "code": "W8n2m",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n2p",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Annen idrett"
     },
     {
         "code": "W8n2r",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Annen aktivitet"
     },
     {
         "code": "W8n2y",
-        "text": "Ulykke el/ionis strål/trykk;ann gt/vei;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;ann gt/vei;Ukjent aktivitet"
     },
     {
         "code": "W8n3a",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Industri"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Industri"
     },
     {
         "code": "W8n3b",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Bygg/anl"
     },
     {
         "code": "W8n3c",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Olje/gassutv"
     },
     {
         "code": "W8n3d",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Jord/skogbr"
     },
     {
         "code": "W8n3e",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Fiske/fangst"
     },
     {
         "code": "W8n3f",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Forsvar"
     },
     {
         "code": "W8n3g",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Politi/fengsel"
     },
     {
         "code": "W8n3h",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Annen næring"
     },
     {
         "code": "W8n3i",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Ukj/ikke spes næri"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Ukj/ikke spes næri"
     },
     {
         "code": "W8n3j",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Utdann"
     },
     {
         "code": "W8n3k",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Verneplikt"
     },
     {
         "code": "W8n3m",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Idrett v/utd/verne"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Idrett v/utd/verne"
     },
     {
         "code": "W8n3p",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Annen idrett"
     },
     {
         "code": "W8n3r",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Annen aktivitet"
     },
     {
         "code": "W8n3y",
-        "text": "Ulykke el/ionis strål/trykk;barneh/lekepl;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;barneh/lekepl;Ukjent aktivitet"
     },
     {
         "code": "W8n4a",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Industri"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Industri"
     },
     {
         "code": "W8n4b",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Bygg/anl"
     },
     {
         "code": "W8n4c",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Olje/gassutv"
     },
     {
         "code": "W8n4d",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Jord/skogbr"
     },
     {
         "code": "W8n4e",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Fiske/fangst"
     },
     {
         "code": "W8n4f",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Forsvar"
     },
     {
         "code": "W8n4g",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Politi/fengsel"
     },
     {
         "code": "W8n4h",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Annen næring"
     },
     {
         "code": "W8n4i",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Ukj/ikke spes næring"
     },
     {
         "code": "W8n4j",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Utdann"
     },
     {
         "code": "W8n4k",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Verneplikt"
     },
     {
         "code": "W8n4m",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n4p",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Annen idrett"
     },
     {
         "code": "W8n4r",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Annen aktivitet"
     },
     {
         "code": "W8n4y",
-        "text": "Ulykke el/ionis strål/trykk;skole m.v;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;skole m.v;Ukjent aktivitet"
     },
     {
         "code": "W8n5a",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Industri"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Industri"
     },
     {
         "code": "W8n5b",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Bygg/anl"
     },
     {
         "code": "W8n5c",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Olje/gassutv"
     },
     {
         "code": "W8n5d",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Jord/skogbr"
     },
     {
         "code": "W8n5e",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Fiske/fangst"
     },
     {
         "code": "W8n5f",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Forsvar"
     },
     {
         "code": "W8n5g",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Politi/fengsel"
     },
     {
         "code": "W8n5h",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Annen næring"
     },
     {
         "code": "W8n5i",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Ukj/ikke spes nær"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Ukj/ikke spes nær"
     },
     {
         "code": "W8n5j",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Utdann"
     },
     {
         "code": "W8n5k",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Verneplikt"
     },
     {
         "code": "W8n5m",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Idrett v/utd/vern"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Idrett v/utd/vern"
     },
     {
         "code": "W8n5p",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Annen idrett"
     },
     {
         "code": "W8n5r",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Annen aktivitet"
     },
     {
         "code": "W8n5y",
-        "text": "Ulykke el/ionis strål/trykk;h-inst/sykehus;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;h-inst/sykehus;Ukjent aktivitet"
     },
     {
         "code": "W8n6a",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Industri"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Industri"
     },
     {
         "code": "W8n6b",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Bygg/anl"
     },
     {
         "code": "W8n6c",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Olje/gassutv"
     },
     {
         "code": "W8n6d",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Jord/skogbr"
     },
     {
         "code": "W8n6e",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Fiske/fangst"
     },
     {
         "code": "W8n6f",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Forsvar"
     },
     {
         "code": "W8n6g",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Politi/fengsel"
     },
     {
         "code": "W8n6h",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Annen næring"
     },
     {
         "code": "W8n6i",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Ukj/ikke spes næ"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Ukj/ikke spes næ"
     },
     {
         "code": "W8n6j",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Utdann"
     },
     {
         "code": "W8n6k",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Verneplikt"
     },
     {
         "code": "W8n6m",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Idrett v/utd/ver"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Idrett v/utd/ver"
     },
     {
         "code": "W8n6p",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Annen idrett"
     },
     {
         "code": "W8n6r",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Annen aktivitet"
     },
     {
         "code": "W8n6y",
-        "text": "Ulykke el/ionis strål/trykk;syke/aldershjem;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;syke/aldershjem;Ukjent aktivitet"
     },
     {
         "code": "W8n7a",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Industri"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Industri"
     },
     {
         "code": "W8n7b",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Bygg/anl"
     },
     {
         "code": "W8n7c",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Olje/gassutv"
     },
     {
         "code": "W8n7d",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Jord/skogbr"
     },
     {
         "code": "W8n7e",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Fiske/fangst"
     },
     {
         "code": "W8n7f",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Forsvar"
     },
     {
         "code": "W8n7g",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Politi/fengsel"
     },
     {
         "code": "W8n7h",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Annen næring"
     },
     {
         "code": "W8n7i",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Ukj/ikke spes næring"
     },
     {
         "code": "W8n7j",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Utdann"
     },
     {
         "code": "W8n7k",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Verneplikt"
     },
     {
         "code": "W8n7m",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n7p",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Annen idrett"
     },
     {
         "code": "W8n7r",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Annen aktivitet"
     },
     {
         "code": "W8n7y",
-        "text": "Ulykke el/ionis strål/trykk;idrettsanl;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;idrettsanl;Ukjent aktivitet"
     },
     {
         "code": "W8n8a",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Industri"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Industri"
     },
     {
         "code": "W8n8b",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Bygg/anl"
     },
     {
         "code": "W8n8c",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Olje/gassutv"
     },
     {
         "code": "W8n8d",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Jord/skogbr"
     },
     {
         "code": "W8n8e",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Fiske/fangst"
     },
     {
         "code": "W8n8f",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Forsvar"
     },
     {
         "code": "W8n8g",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Politi/fengsel"
     },
     {
         "code": "W8n8h",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Annen næring"
     },
     {
         "code": "W8n8i",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;Ukj/ikke spes næring"
     },
     {
         "code": "W8n8j",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Utdann"
     },
     {
         "code": "W8n8k",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Verneplikt"
     },
     {
         "code": "W8n8m",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n8p",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Annen idrett"
     },
     {
         "code": "W8n8r",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Annen aktivitet"
     },
     {
         "code": "W8n8y",
-        "text": "Ulykke el/ionis strål/trykk;friluftsliv;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;friluftsliv;Ukjent aktivitet"
     },
     {
         "code": "W8n9a",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Industri"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Industri"
     },
     {
         "code": "W8n9b",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Bygg/anl"
     },
     {
         "code": "W8n9c",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Olje/gassutv"
     },
     {
         "code": "W8n9d",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Jord/skogbr"
     },
     {
         "code": "W8n9e",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Fiske/fangst"
     },
     {
         "code": "W8n9f",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Forsvar"
     },
     {
         "code": "W8n9g",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Politi/fengsel"
     },
     {
         "code": "W8n9h",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Annen næring"
     },
     {
         "code": "W8n9i",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Ukj/ikke spes næring"
     },
     {
         "code": "W8n9j",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Utdann"
     },
     {
         "code": "W8n9k",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Verneplikt"
     },
     {
         "code": "W8n9m",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Idrett v/utd/vernepl"
     },
     {
         "code": "W8n9p",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Annen idrett"
     },
     {
         "code": "W8n9r",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Annen aktivitet"
     },
     {
         "code": "W8n9y",
-        "text": "Ulykke el/ionis strål/trykk;annet sted;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;annet sted;Ukjent aktivitet"
     },
     {
         "code": "W8nxa",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Industri"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Industri"
     },
     {
         "code": "W8nxb",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Bygg/anl"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Bygg/anl"
     },
     {
         "code": "W8nxc",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Olje/gassutv"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Olje/gassutv"
     },
     {
         "code": "W8nxd",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Jord/skogbr"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Jord/skogbr"
     },
     {
         "code": "W8nxe",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Fiske/fangst"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Fiske/fangst"
     },
     {
         "code": "W8nxf",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Forsvar"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Forsvar"
     },
     {
         "code": "W8nxg",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Politi/fengsel"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Politi/fengsel"
     },
     {
         "code": "W8nxh",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Annen næring"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Annen næring"
     },
     {
         "code": "W8nxi",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Ukj/ikke spes næring"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Ukj/ikke spes næring"
     },
     {
         "code": "W8nxj",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Utdann"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Utdann"
     },
     {
         "code": "W8nxk",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Verneplikt"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Verneplikt"
     },
     {
         "code": "W8nxm",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Idrett v/utd/vernepl"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Idrett v/utd/vernepl"
     },
     {
         "code": "W8nxp",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Annen idrett"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Annen idrett"
     },
     {
         "code": "W8nxr",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Annen aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Annen aktivitet"
     },
     {
         "code": "W8nxy",
-        "text": "Ulykke el/ionis strål/trykk;ukjent sted;Ukjent aktivitet"
+        "text": "Ulykke el/strål/temp/trykk;ukjent sted;Ukjent aktivitet"
     },
     {
         "code": "X0n0a",
@@ -76633,7 +76633,7 @@
     },
     {
         "code": "Z301",
-        "text": "Innsetting av spiral"
+        "text": "Innsetting av spiral eller p-stav"
     },
     {
         "code": "Z302",
