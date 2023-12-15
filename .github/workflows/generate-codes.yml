@@ -61,7 +61,7 @@ jobs:
 
       - name: Commit and push changed files
         # Only do this if workflow was started from manual dispatch:
-        if: "${{ github.event.name == 'workflow_dispatch' }}"
+        if: "${{ github.event_name == 'workflow_dispatch' }}"
         # We want commits to be attributed to the use initiating the workflow
         env:
           GIT_USER_NAME: "${{ github.actor }}"
