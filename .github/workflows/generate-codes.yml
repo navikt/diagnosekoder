@@ -21,6 +21,8 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required for comitting generated codes to the repo.
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
