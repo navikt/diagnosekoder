@@ -20,6 +20,8 @@ on:
 jobs:
   increment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required for comitting incremented package version to repo.
     env:
       # This is what the version is set to when specifying yearly version increment
       NEW_YEAR_VERSION: "1.${{ github.event.inputs.year }}.0"

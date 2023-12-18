@@ -56,6 +56,10 @@
         "text": "Bekymret/opptatt av utseende IKA"
     },
     {
+        "code": "A191",
+        "text": "Kjønnsinkongruens"
+    },
+    {
         "code": "A20",
         "text": "Dødshjelp diskusjon/spørsmål om"
     },
@@ -538,6 +542,42 @@
     {
         "code": "D99",
         "text": "Sykdom i fordøyelsessystemet IKA"
+    },
+    {
+        "code": "D991",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D992",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D993",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D994",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D995",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D996",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D997",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D998",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
+    },
+    {
+        "code": "D999",
+        "text": "Utbruddssykdom definert av FHI, fordøyelsessystemet"
     },
     {
         "code": "F01",
@@ -1349,7 +1389,7 @@
     },
     {
         "code": "P09",
-        "text": "Seksuell legning  og kjønnsidentitet, bekymring for"
+        "text": "Seksuell legning bekymring for"
     },
     {
         "code": "P10",
@@ -1649,7 +1689,7 @@
     },
     {
         "code": "R97",
-        "text": "Allergisk rinitt"
+        "text": "Allergisk rhinitt"
     },
     {
         "code": "R98",
@@ -1666,6 +1706,34 @@
     {
         "code": "R992",
         "text": "Covid-19 (bekreftet)"
+    },
+    {
+        "code": "R993",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R994",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R995",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R996",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R997",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R998",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
+    },
+    {
+        "code": "R999",
+        "text": "Utbruddssykdom definert av FHI, luftveier"
     },
     {
         "code": "S01",
