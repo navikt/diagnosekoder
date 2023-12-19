@@ -102,7 +102,7 @@ Hvis man ikke vil gjøre det via github actions kan nye koder og versjonsoppdate
 
 ## Henvendelser
 
-Dette prosjeket er vedlikeholdt av [navikt/teamsykmelding og navikt/k9saksbehandling](CODEOWNERS) 
+Dette prosjeket er vedlikeholdt av [navikt/k9saksbehandling](CODEOWNERS) 
 
 Spørsmål knyttet til koden eller prosjektet kan stilles som
 [issues](https://github.com/navikt/syfodiagnosecodegeneratorjson/issues) her på GitHub
