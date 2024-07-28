@@ -26,6 +26,6 @@
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.1",
     "rollup": "^4.18.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   }
 }
