@@ -25,3 +25,13 @@ export const toIcpc2Diagnosekode = (dk: Diagnosekode): ICPC2Diagnosekode => {
     validateIcpc2Diagnosekode(dk)
     return {...dk, [icpc2]: undefined}
 }
+
+/**
+ * Used when loading the generated json file to avoid performance overhead of validating it with toIcpc2Diagnosekode.
+ *
+ * No point in revalidating the json every time it is loaded, as long as toIcd2Diagnosekode is used in the generator
+ * when creating the json file.
+ *
+ * @param dk
+ */
+export const castToIcpc2Diagnosekode = (dk: Diagnosekode): ICPC2Diagnosekode => dk as ICPC2Diagnosekode
