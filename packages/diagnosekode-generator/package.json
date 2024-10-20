@@ -28,7 +28,7 @@
     "node-xlsx": "^0.24.0"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.7.7",
     "typescript": "^5.6.3"
   },
   "engines": {
