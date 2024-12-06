@@ -1,6 +1,6 @@
 {
   "name": "@navikt/diagnosekoder",
-  "version": "1.2024.1",
+  "version": "1.2025.0",
   "type": "module",
   "description": "Provides icd10 and icpc2 diagnose codes transformed from excel files published by ehelse.no",
   "keywords": [
