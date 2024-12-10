@@ -78384,175 +78384,175 @@
         "text": "Status etter transplantert lunge"
     },
     {
-        "code": "Z94.3",
+        "code": "Z943",
         "text": "Status etter transplantert hjerte og lunger"
     },
     {
-        "code": "Z94.4",
+        "code": "Z944",
         "text": "Status etter transplantert lever"
     },
     {
-        "code": "Z94.5",
+        "code": "Z945",
         "text": "Status etter transplantert hud"
     },
     {
-        "code": "Z94.6",
+        "code": "Z946",
         "text": "Status etter transplantert benvev"
     },
     {
-        "code": "Z94.7",
+        "code": "Z947",
         "text": "Status etter transplantert hornhinne"
     },
     {
-        "code": "Z94.8",
+        "code": "Z948",
         "text": "Status etter annet spesifisert transplantert organ og vev"
     },
     {
-        "code": "Z94.9",
+        "code": "Z949",
         "text": "Status etter transplantert ikke spesifisert organ og vev"
     },
     {
-        "code": "Z95.0",
+        "code": "Z950",
         "text": "Status med hjertepacemaker og defibrillator"
     },
     {
-        "code": "Z95.1",
+        "code": "Z951",
         "text": "Status med aortakoronart bypasstransplantat"
     },
     {
-        "code": "Z95.2",
+        "code": "Z952",
         "text": "Status med mekanisk hjerteventil"
     },
     {
-        "code": "Z95.3",
+        "code": "Z953",
         "text": "Status med fremmed biologisk hjerteklaff"
     },
     {
-        "code": "Z95.4",
+        "code": "Z954",
         "text": "Status med annen hjerteklafferstatning"
     },
     {
-        "code": "Z95.5",
+        "code": "Z955",
         "text": "Status med angioplastisk koronarimplantat og -transplantat"
     },
     {
-        "code": "Z95.8",
+        "code": "Z958",
         "text": "Status med andre spes. impl. og transpl. i hjerte og blodkar"
     },
     {
-        "code": "Z95.9",
+        "code": "Z959",
         "text": "Status med ikke spes. impl. og transpl. i hjerte og blodkar"
     },
     {
-        "code": "Z96.0",
+        "code": "Z960",
         "text": "Status med implantater i kjønnsorganer og urinveier"
     },
     {
-        "code": "Z96.1",
+        "code": "Z961",
         "text": "Status med intraokulært linseimplantat"
     },
     {
-        "code": "Z96.2",
+        "code": "Z962",
         "text": "Status med otologiske og audiologiske implantater"
     },
     {
-        "code": "Z96.3",
+        "code": "Z963",
         "text": "Status med kunstig strupe"
     },
     {
-        "code": "Z96.4",
+        "code": "Z964",
         "text": "Status med endokrine implantater"
     },
     {
-        "code": "Z96.5",
+        "code": "Z965",
         "text": "Status med tannrots- og kjeveimplantater"
     },
     {
-        "code": "Z96.6",
+        "code": "Z966",
         "text": "Status med ortopediske leddimplantater"
     },
     {
-        "code": "Z96.7",
+        "code": "Z967",
         "text": "Status med andre ben- og seneimplantater"
     },
     {
-        "code": "Z96.8",
+        "code": "Z968",
         "text": "Status med andre spesifiserte funksjonelle implantater"
     },
     {
-        "code": "Z96.9",
+        "code": "Z969",
         "text": "Status med ikke spesifisert funksjonelt implantat"
     },
     {
-        "code": "Z97.0",
+        "code": "Z970",
         "text": "Kunstig øye"
     },
     {
-        "code": "Z97.1",
+        "code": "Z971",
         "text": "Kunstig ekstremitet (hel/delvis)"
     },
     {
-        "code": "Z97.2",
+        "code": "Z972",
         "text": "Tannprotese (hel/delvis)"
     },
     {
-        "code": "Z97.3",
+        "code": "Z973",
         "text": "Briller og kontaktlinser"
     },
     {
-        "code": "Z97.4",
+        "code": "Z974",
         "text": "Utvendig høreapparat"
     },
     {
-        "code": "Z97.5",
+        "code": "Z975",
         "text": "Status med spiral som prevensjon"
     },
     {
-        "code": "Z97.8",
+        "code": "Z978",
         "text": "Status med andre spesifiserte hjelpemidler"
     },
     {
-        "code": "Z98.0",
+        "code": "Z980",
         "text": "Status etter tarmbypass og anastomose"
     },
     {
-        "code": "Z98.1",
+        "code": "Z981",
         "text": "Status etter artrodese"
     },
     {
-        "code": "Z98.2",
+        "code": "Z982",
         "text": "Status med hjelpemiddel for drenering av cerebrospinalvæske"
     },
     {
-        "code": "Z98.8",
+        "code": "Z988",
         "text": "Andre spesifiserte tilstander etter kirurgi"
     },
     {
-        "code": "Z99.0",
+        "code": "Z990",
         "text": "Avhengighet av aspirator (sug)"
     },
     {
-        "code": "Z99.1",
+        "code": "Z991",
         "text": "Avhengighet av respirator"
     },
     {
-        "code": "Z99.2",
+        "code": "Z992",
         "text": "Avhengighet av nyredialyse"
     },
     {
-        "code": "Z99.3",
+        "code": "Z993",
         "text": "Avhengighet av rullestol"
     },
     {
-        "code": "Z99.4",
+        "code": "Z994",
         "text": "Avhengighet av kunstig hjerte"
     },
     {
-        "code": "Z99.8",
+        "code": "Z998",
         "text": "Avhengighet av andre tekniske hjelpemidler og innretninger"
     },
     {
-        "code": "Z99.9",
+        "code": "Z999",
         "text": "Avhengighet av ikke spes. teknisk hjelpemiddel og innretning"
     }
 ]
