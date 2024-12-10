@@ -1673,7 +1673,7 @@
     },
     {
         "code": "B04",
-        "text": "Mpox (apekopper)"
+        "text": "M-kopper"
     },
     {
         "code": "B050",
@@ -7261,7 +7261,7 @@
     },
     {
         "code": "E054",
-        "text": "Iatrogen tyreotoksikose"
+        "text": "Thyrotoxicosis factitia"
     },
     {
         "code": "E055",
@@ -15241,7 +15241,7 @@
     },
     {
         "code": "H931",
-        "text": "Øresus"
+        "text": "Tinnitus"
     },
     {
         "code": "H932",
@@ -19582,6 +19582,14 @@
     {
         "code": "K638",
         "text": "Andre spesifiserte sykdommer i tarm"
+    },
+    {
+        "code": "K6380",
+        "text": "Kort tarm-syndrom (SBS)"
+    },
+    {
+        "code": "K6381",
+        "text": "Tarmsvikt"
     },
     {
         "code": "K639",
@@ -39053,7 +39061,7 @@
     },
     {
         "code": "O264",
-        "text": "Herpes gestationis"
+        "text": "Svangerskapspemfigoid"
     },
     {
         "code": "O265",
@@ -50505,7 +50513,7 @@
     },
     {
         "code": "T703",
-        "text": "Trykkfallsyke"
+        "text": "Trykkfallssyke"
     },
     {
         "code": "T704",
@@ -78173,11 +78181,11 @@
     },
     {
         "code": "Z888",
-        "text": "Oppl. om all. mot a. spes.legem./biol. stoff, egen sykehist."
+        "text": "Allergi mot an. spes.legem./med.biol. stoff i egen sykehist."
     },
     {
         "code": "Z889",
-        "text": "Oppl. om all. mot uspes. legem./biol. stoff i egen sykehist."
+        "text": "Allergi mot uspes. legem./med. biol. stoff i egen sykehist."
     },
     {
         "code": "Z890",
@@ -78257,7 +78265,7 @@
     },
     {
         "code": "Z910",
-        "text": "Erfart all. mot a. enn legem./biol. stoffer i egen sykehist."
+        "text": "Allergi mot an. enn legem./med. biol. stoff i egen sykehist."
     },
     {
         "code": "Z911",
