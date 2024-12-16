@@ -537,7 +537,7 @@
     },
     {
         "code": "D98",
-        "text": "Galleveisbetennelse/gallesten"
+        "text": "Galleveisbetennelse/gallestein"
     },
     {
         "code": "D99",
@@ -1473,7 +1473,7 @@
     },
     {
         "code": "P73",
-        "text": "Affektiv lidelse"
+        "text": "Bipolar lidelse"
     },
     {
         "code": "P74",
@@ -2188,12 +2188,16 @@
         "text": "Glomerulonefritt/nefropati"
     },
     {
+        "code": "U891",
+        "text": "Nyresvikt"
+    },
+    {
         "code": "U90",
         "text": "Ortostatisk proteinuri"
     },
     {
         "code": "U95",
-        "text": "Sten i urinveier"
+        "text": "Stein i urinveier"
     },
     {
         "code": "U98",
