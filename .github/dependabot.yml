@@ -8,80 +8,11 @@ registries:
 
 updates:
   - package-ecosystem: npm
+    cooldown:
+      default-days: 30
     directory: '/'
     schedule:
       interval: 'weekly'
-      day: 'sunday'
+      day: 'monday'
     open-pull-requests-limit: 20
     registries: '*'
-    groups:
-      aksel-dependencies:
-        patterns:
-          - '@navikt/aksel*'
-          - '@navikt/ds*'
-      react-dependencies:
-        patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
-      styling:
-        patterns:
-          - 'tailwindcss'
-          - 'autoprefixer'
-          - 'postcss'
-          - 'postcss-import'
-          - 'classnames'
-      graphql-codegen:
-        patterns:
-          - '@graphql-codegen/*'
-      graphql-runtime:
-        patterns:
-          - '@apollo/client'
-          - '@apollo/server'
-          - '@as-integrations/next'
-          - '@graphql-tools/*'
-          - '@graphql-typed-document-node/core'
-          - 'graphql'
-          - 'graphql-tag'
-      team-deps:
-        patterns:
-          - '@navikt/dinesykmeldte-sidemeny'
-          - '@navikt/next-auth-wonderwall'
-          - '@navikt/next-logger'
-          - 'nextleton'
-      next:
-        patterns:
-          - 'next'
-          - '@next/bundle-analyzer'
-          - 'eslint-config-next'
-      code-style:
-        patterns:
-          - 'eslint'
-          - 'prettier'
-          - 'prettier-plugin-tailwindcss'
-      testing:
-        patterns:
-          - 'vitest'
-          - 'vitest-dom'
-          - 'vitest-axe'
-          - '@vitejs/plugin-react'
-          - 'open'
-          - 'next-router-mock'
-          - '@testing-library/react'
-          - '@testing-library/user-event'
-          - 'jsdom'
-      utils:
-        patterns:
-          - 'zod'
-          - 'date-fns'
-          - 'date-fns-tz'
-          - 'remeda'
-          - 'fuse.js'
-      dev-tools:
-        patterns:
-          - 'dotenv'
-          - 'concurrently'
-          - 'husky'
-          - 'lint-staged'
-          - 'node-gyp'
