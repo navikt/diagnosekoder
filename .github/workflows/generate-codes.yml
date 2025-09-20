@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
       # If workflow is started manually and user inputs a new url config, write it to the repo before generating codes.
       - name: Write icd10 url config
         if: "${{ github.event.inputs.icd10-url != '' }}"

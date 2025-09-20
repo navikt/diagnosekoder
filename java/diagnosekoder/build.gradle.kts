@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val kotlinVersion = "1.9.0"
+val kotlinVersion = "2.2.0"
 val jacksonVersion = "2.15.2"
 
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "2.2.0"
     id("maven-publish")
 }
 
@@ -20,7 +20,7 @@ repositories {
 
 kotlin {
     compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
+        jvmTarget.set(JvmTarget.JVM_21)
     }
 }
 
