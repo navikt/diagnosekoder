@@ -37,7 +37,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
 
       - name: Set new minor version in javascript package
         if: github.event.inputs.version-increment == 'year' && github.event.inputs.year != ''
