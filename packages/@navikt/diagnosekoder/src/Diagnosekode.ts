@@ -1,6 +1,9 @@
 export interface Diagnosekode {
     readonly code: string;
     readonly text: string;
+    readonly parentCode?: string;
+    readonly validFrom?: string;
+    readonly validTo?: string;
 }
 
 export const instanceOfDiagnosekode = (obj: any): obj is Diagnosekode =>

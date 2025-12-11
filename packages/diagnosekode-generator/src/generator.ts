@@ -36,12 +36,18 @@ interface JsonCodeItem {
   Kode?: string;
   Tekst_med_maksimalt_60_tegn?: string;
   Tekst_uten_lengdebegrensning?: string;
+  Foreldrekode?: string;
+  Gyldig_fra?: string;
+  Gyldig_til?: string;
 }
 
-function mapJsonItem(item: JsonCodeItem): {code?: string, text?: string} {
+function mapJsonItem(item: JsonCodeItem): {code?: string, text?: string, parentCode?: string, validFrom?: string, validTo?: string} {
   return {
     code: item.Kode,
     text: item.Tekst_uten_lengdebegrensning,
+    parentCode: item.Foreldrekode,
+    validFrom: item.Gyldig_fra,
+    validTo: item.Gyldig_til,
   };
 }
 
