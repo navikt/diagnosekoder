@@ -76,11 +76,12 @@ async function fetchJsonRemote(url: string): Promise<JsonCodeItem[]> {
   console.debug("Fetching json file", url);
   const result = await fetch(url);
   if (result.ok) {
-    const json = await result.json();
     const contentType = result.headers.get("Content-Type");
     if (contentType === null || !contentType.includes("application/json")) {
       console.warn(`Unexpected content type of downloaded file: ${contentType} (${url})`)
     }
+    
+    const json = await result.json();
     
     // Handle different possible JSON structures
     let data = json;
