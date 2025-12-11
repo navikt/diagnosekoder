@@ -1,6 +1,6 @@
 import xlsx from "node-xlsx";
 import {icpc2ProcessCodes} from "./icpc2processCodes.js";
-import {ICD10Diagnosekode, ICPC2Diagnosekode, toIcd10Diagnosekode, toIcpc2Diagnosekode} from "@navikt/diagnosekoder";
+import {ICD10Diagnosekode, ICPC2Diagnosekode, toIcd10Diagnosekode, toIcpc2Diagnosekode, Diagnosekode} from "@navikt/diagnosekoder";
 import {toDiagnosekode} from "@navikt/diagnosekoder";
 import type {Urls} from "./config.js";
 
@@ -18,9 +18,7 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
 export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
   const jsonData = await fetchJsonRemote(urls.icd10);
   return jsonData
-      .map(mapJsonItem)
-      .filter(row => row?.code?.length && row?.text?.length) // Remove empty rows
-      .map(toDiagnosekode)
+      .map(mapJsonToDiagnosekode)
       .map(toIcd10Diagnosekode)
 }
 
@@ -41,10 +39,21 @@ interface JsonCodeItem {
   Gyldig_til?: string;
 }
 
-function mapJsonItem(item: JsonCodeItem): {code?: string, text?: string, parentCode?: string, validFrom?: string, validTo?: string} {
+function mapJsonToDiagnosekode(item: JsonCodeItem): Diagnosekode {
+  const code = item.Kode;
+  const text = item.Tekst_uten_lengdebegrensning;
+  
+  if (!code || code.length === 0) {
+    throw new Error(`Invalid diagnosis code: code is missing or empty in ${JSON.stringify(item)}`);
+  }
+  
+  if (!text || text.length === 0) {
+    throw new Error(`Invalid diagnosis code: text is missing or empty in ${JSON.stringify(item)}`);
+  }
+  
   return {
-    code: item.Kode,
-    text: item.Tekst_uten_lengdebegrensning,
+    code,
+    text,
     parentCode: item.Foreldrekode,
     validFrom: item.Gyldig_fra,
     validTo: item.Gyldig_til,
