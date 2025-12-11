@@ -32,7 +32,20 @@ function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
   };
 }
 
-function mapJsonItem(item: any): {code?: string, text?: string} {
+interface JsonCodeItem {
+  code?: string;
+  kode?: string;
+  Code?: string;
+  Kode?: string;
+  text?: string;
+  tekst?: string;
+  Text?: string;
+  Tekst?: string;
+  term?: string;
+  Term?: string;
+}
+
+function mapJsonItem(item: JsonCodeItem): {code?: string, text?: string} {
   // Handle different possible JSON structures
   return {
     code: item.code || item.kode || item.Code || item.Kode,
@@ -59,14 +72,11 @@ async function fetchXlsxRemote(url: string): Promise<ArrayBuffer> {
   }
 }
 
-async function fetchJsonRemote(url: string): Promise<any[]> {
+async function fetchJsonRemote(url: string): Promise<JsonCodeItem[]> {
   console.debug("Fetching json file", url);
   const result = await fetch(url);
   if (result.ok) {
     const json = await result.json();
-    if (!json) {
-      throw new Error(`Empty response returned from ${url}`)
-    }
     const contentType = result.headers.get("Content-Type");
     if (contentType === null || !contentType.includes("application/json")) {
       console.warn(`Unexpected content type of downloaded file: ${contentType} (${url})`)
@@ -86,6 +96,10 @@ async function fetchJsonRemote(url: string): Promise<any[]> {
     
     if (!Array.isArray(data)) {
       throw new Error(`Expected array in JSON response from ${url}, got: ${typeof data}`)
+    }
+    
+    if (data.length === 0) {
+      throw new Error(`Empty array returned from ${url}`)
     }
     
     console.debug(`Json file fetched (${data.length} items)`)
