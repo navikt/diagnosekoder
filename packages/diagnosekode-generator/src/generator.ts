@@ -33,23 +33,15 @@ function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
 }
 
 interface JsonCodeItem {
-  code?: string;
-  kode?: string;
-  Code?: string;
   Kode?: string;
-  text?: string;
-  tekst?: string;
-  Text?: string;
-  Tekst?: string;
-  term?: string;
-  Term?: string;
+  Tekst_med_maksimalt_60_tegn?: string;
+  Tekst_uten_lengdebegrensning?: string;
 }
 
 function mapJsonItem(item: JsonCodeItem): {code?: string, text?: string} {
-  // Handle different possible JSON structures
   return {
-    code: item.code || item.kode || item.Code || item.Kode,
-    text: item.text || item.tekst || item.Text || item.Tekst || item.term || item.Term,
+    code: item.Kode,
+    text: item.Tekst_uten_lengdebegrensning,
   };
 }
 
@@ -83,28 +75,16 @@ async function fetchJsonRemote(url: string): Promise<JsonCodeItem[]> {
     
     const json = await result.json();
     
-    // Handle different possible JSON structures
-    let data = json;
-    if (json.data) {
-      data = json.data;
-    } else if (json.codes) {
-      data = json.codes;
-    } else if (json.items) {
-      data = json.items;
-    } else if (json.codeSystem) {
-      data = json.codeSystem;
+    if (!Array.isArray(json)) {
+      throw new Error(`Expected array in JSON response from ${url}, got: ${typeof json}`)
     }
     
-    if (!Array.isArray(data)) {
-      throw new Error(`Expected array in JSON response from ${url}, got: ${typeof data}`)
-    }
-    
-    if (data.length === 0) {
+    if (json.length === 0) {
       throw new Error(`Empty array returned from ${url}`)
     }
     
-    console.debug(`Json file fetched (${data.length} items)`)
-    return data;
+    console.debug(`Json file fetched (${json.length} items)`)
+    return json;
   } else {
     throw new Error(`Unexpected response from "${url}": ${result.status} - ${result.statusText}`)
   }
