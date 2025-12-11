@@ -44,11 +44,11 @@ function mapJsonToDiagnosekode(item: JsonCodeItem): Diagnosekode {
   const text = item.Tekst_uten_lengdebegrensning;
   
   if (!code || code.length === 0) {
-    throw new Error(`Invalid diagnosis code: code is missing or empty in ${JSON.stringify(item)}`);
+    throw new Error(`Invalid diagnosis code: code is missing or empty (Kode: "${code || ''}")`);
   }
   
   if (!text || text.length === 0) {
-    throw new Error(`Invalid diagnosis code: text is missing or empty in ${JSON.stringify(item)}`);
+    throw new Error(`Invalid diagnosis code: text is missing or empty for code "${code}"`);
   }
   
   return {
