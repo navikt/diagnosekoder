@@ -17,9 +17,7 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
 
 export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
   const jsonData = await fetchJsonRemote(urls.icd10);
-  const diagnosekoder = jsonData.map(mapJsonToDiagnosekode);
-  const filtered = removeParentCodes(diagnosekoder);
-  return filtered.map(toIcd10Diagnosekode);
+  return removeParentCodes(jsonData.map(mapJsonToDiagnosekode)).map(toIcd10Diagnosekode);
 }
 
 function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
