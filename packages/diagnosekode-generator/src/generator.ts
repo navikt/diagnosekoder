@@ -17,9 +17,9 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
 
 export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
   const jsonData = await fetchJsonRemote(urls.icd10);
-  return jsonData
-      .map(mapJsonToDiagnosekode)
-      .map(toIcd10Diagnosekode)
+  const diagnosekoder = jsonData.map(mapJsonToDiagnosekode);
+  const filtered = removeParentCodes(diagnosekoder);
+  return filtered.map(toIcd10Diagnosekode);
 }
 
 function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
@@ -58,6 +58,19 @@ function mapJsonToDiagnosekode(item: JsonCodeItem): Diagnosekode {
     validFrom: item.Gyldig_fra,
     validTo: item.Gyldig_til,
   };
+}
+
+function removeParentCodes(diagnosekoder: Diagnosekode[]): Diagnosekode[] {
+  // Collect all codes that are referenced as parent codes
+  const parentCodeSet = new Set<string>();
+  for (const diagnosekode of diagnosekoder) {
+    if (diagnosekode.parentCode) {
+      parentCodeSet.add(diagnosekode.parentCode);
+    }
+  }
+  
+  // Filter out diagnosekoder whose code is in the parent code set
+  return diagnosekoder.filter(diagnosekode => !parentCodeSet.has(diagnosekode.code));
 }
 
 async function fetchXlsxRemote(url: string): Promise<ArrayBuffer> {
