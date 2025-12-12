@@ -17,7 +17,9 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
 
 export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
   const jsonData = await fetchJsonRemote(urls.icd10);
-  return removeParentCodes(jsonData.map(mapJsonToDiagnosekode)).map(toIcd10Diagnosekode);
+  return removeParentCodes(jsonData.map(mapJsonToDiagnosekode))
+      .map(normalizeCode)
+      .map(toIcd10Diagnosekode);
 }
 
 function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
@@ -69,6 +71,21 @@ function removeParentCodes(diagnosekoder: Diagnosekode[]): Diagnosekode[] {
   
   // Filter out diagnosekoder whose code is in the parent code set
   return diagnosekoder.filter(diagnosekode => !parentCodeSet.has(diagnosekode.code));
+}
+
+function normalizeCode(diagnosekode: Diagnosekode): Diagnosekode {
+  // Remove all "." characters from the code
+  const normalizedCode = diagnosekode.code.replace(/\./g, '');
+  
+  // Validate that the resulting code only contains A-Z and 0-9
+  if (!/^[A-Z0-9]+$/.test(normalizedCode)) {
+    throw new Error(`Invalid diagnosis code after normalization: "${normalizedCode}" (original: "${diagnosekode.code}"). Code must contain only letters A-Z and digits 0-9.`);
+  }
+  
+  return {
+    ...diagnosekode,
+    code: normalizedCode,
+  };
 }
 
 async function fetchXlsxRemote(url: string): Promise<ArrayBuffer> {
