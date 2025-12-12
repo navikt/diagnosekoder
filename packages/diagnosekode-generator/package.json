@@ -7,10 +7,9 @@
   "types": "index.d.ts",
   "private": true,
   "scripts": {
-    "clean": "rm -rf ./lib/*",
-    "build": "npm run clean && tsc",
-    "generate": "npm run build && node lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "tsc --noEmit",
+    "generate": "node src/index.ts",
+    "test": "node src/tests/tests.ts"
   },
   "keywords": [
     "diagnosekode",

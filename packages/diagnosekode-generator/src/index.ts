@@ -1,9 +1,9 @@
-import {generateICD10, generateICPC2} from "./generator.js";
+import {generateICD10, generateICPC2} from "./generator.ts";
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import resolveRunDir from "./resolveRunDir.js";
-import {readUrlConfigs} from "./config.js";
-import {ICD10Diagnosekode, ICPC2Diagnosekode} from "@navikt/diagnosekoder";
+import resolveRunDir from "./resolveRunDir.ts";
+import {readUrlConfigs} from "./config.ts";
+import type {ICD10Diagnosekode, ICPC2Diagnosekode} from "@navikt/diagnosekoder";
 
 /**
  * Resolves the path to the @navikt/diagnosekoder npm package src dir, where the generated diagnosekode json files for

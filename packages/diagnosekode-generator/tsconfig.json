@@ -1,9 +1,15 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
+        "target": "esnext",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true,
+        "verbatimModuleSyntax": true,
+        "erasableSyntaxOnly": true,
         "baseUrl": "./",
         "outDir": "./lib",
-        "moduleResolution": "Node",
         "rootDir": "./src"
     },
     "include": [

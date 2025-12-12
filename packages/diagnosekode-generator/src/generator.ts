@@ -1,8 +1,10 @@
 import xlsx from "node-xlsx";
-import {icpc2ProcessCodes} from "./icpc2processCodes.js";
-import {ICD10Diagnosekode, ICPC2Diagnosekode, toIcd10Diagnosekode, toIcpc2Diagnosekode, Diagnosekode} from "@navikt/diagnosekoder";
+import {icpc2ProcessCodes} from "./icpc2processCodes.ts";
+import {type ICD10Diagnosekode, type ICPC2Diagnosekode, toIcd10Diagnosekode, toIcpc2Diagnosekode} from "@navikt/diagnosekoder";
 import {toDiagnosekode} from "@navikt/diagnosekoder";
-import type {Urls} from "./config.js";
+import type {Urls} from "./config.ts";
+import type { DownloadFormat } from "./DownloadFormat.ts";
+import { processDownloaded } from "./processing.ts";
 
 export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
   const workSheetsFromFile = xlsx.parse(await fetchXlsxRemote(urls.icpc2));
@@ -16,75 +18,17 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
 }
 
 export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
-  const jsonData = await fetchJsonRemote(urls.icd10);
-  return removeParentCodes(jsonData.map(mapJsonToDiagnosekode))
-      .map(normalizeCode)
+  const downloaded = await fetchJsonRemote(urls.icd10);
+  return processDownloaded(downloaded)
       .map(toIcd10Diagnosekode);
 }
+
 
 function mapWorksheetRow(rowColumns: string[]): {code?: string, text?: string} {
   return {
     code: rowColumns[0],
     // Third column is text limited to 60 characters
     text: rowColumns[2],
-  };
-}
-
-interface JsonCodeItem {
-  Kode?: string;
-  Tekst_med_maksimalt_60_tegn?: string;
-  Tekst_uten_lengdebegrensning?: string;
-  Foreldrekode?: string;
-  Gyldig_fra?: string;
-  Gyldig_til?: string;
-}
-
-function mapJsonToDiagnosekode(item: JsonCodeItem): Diagnosekode {
-  const code = item.Kode;
-  const text = item.Tekst_uten_lengdebegrensning;
-  
-  if (!code || code.length === 0) {
-    throw new Error(`Invalid diagnosis code: code is missing or empty (Kode: "${code || ''}")`);
-  }
-  
-  if (!text || text.length === 0) {
-    throw new Error(`Invalid diagnosis code: text is missing or empty for code "${code}"`);
-  }
-  
-  return {
-    code,
-    text,
-    parentCode: item.Foreldrekode,
-    validFrom: item.Gyldig_fra,
-    validTo: item.Gyldig_til,
-  };
-}
-
-function removeParentCodes(diagnosekoder: Diagnosekode[]): Diagnosekode[] {
-  // Collect all codes that are referenced as parent codes
-  const parentCodeSet = new Set<string>();
-  for (const diagnosekode of diagnosekoder) {
-    if (diagnosekode.parentCode) {
-      parentCodeSet.add(diagnosekode.parentCode);
-    }
-  }
-  
-  // Filter out diagnosekoder whose code is in the parent code set
-  return diagnosekoder.filter(diagnosekode => !parentCodeSet.has(diagnosekode.code));
-}
-
-function normalizeCode(diagnosekode: Diagnosekode): Diagnosekode {
-  // Remove all "." characters from the code
-  const normalizedCode = diagnosekode.code.replace(/\./g, '');
-  
-  // Validate that the resulting code only contains A-Z and 0-9
-  if (!/^[A-Z0-9]+$/.test(normalizedCode)) {
-    throw new Error(`Invalid diagnosis code after normalization: "${normalizedCode}" (original: "${diagnosekode.code}"). Code must contain only letters A-Z and digits 0-9.`);
-  }
-  
-  return {
-    ...diagnosekode,
-    code: normalizedCode,
   };
 }
 
@@ -107,15 +51,10 @@ async function fetchXlsxRemote(url: string): Promise<ArrayBuffer> {
   }
 }
 
-async function fetchJsonRemote(url: string): Promise<JsonCodeItem[]> {
+async function fetchJsonRemote(url: string): Promise<DownloadFormat[]> {
   console.debug("Fetching json file", url);
   const result = await fetch(url);
   if (result.ok) {
-    const contentType = result.headers.get("Content-Type");
-    if (contentType === null || !contentType.includes("application/json")) {
-      console.warn(`Unexpected content type of downloaded file: ${contentType} (${url})`)
-    }
-    
     const json = await result.json();
     
     if (!Array.isArray(json)) {
@@ -126,7 +65,6 @@ async function fetchJsonRemote(url: string): Promise<JsonCodeItem[]> {
       throw new Error(`Empty array returned from ${url}`)
     }
     
-    console.debug(`Json file fetched (${json.length} items)`)
     return json;
   } else {
     throw new Error(`Unexpected response from "${url}": ${result.status} - ${result.statusText}`)

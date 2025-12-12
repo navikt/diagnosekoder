@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises'
-import resolveRunDir from "./resolveRunDir.js";
+import resolveRunDir from "./resolveRunDir.ts";
 import path from "node:path";
 
 export interface Urls {
