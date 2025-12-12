@@ -2,7 +2,8 @@ import type { DownloadFormat } from "./DownloadFormat.ts";
 import type { Diagnosekode } from "@navikt/diagnosekoder";
 
 export function processDownloaded(downloaded: DownloadFormat[]): Diagnosekode[] {
-    return removeParentCodes(downloaded.map(mapJsonToDiagnosekode))
+    return removeNotReportable(downloaded)
+        .map(mapJsonToDiagnosekode)
         .map(normalizeCode)
 }
 
@@ -27,25 +28,23 @@ function mapJsonToDiagnosekode(item: DownloadFormat): Diagnosekode {
     };
 }
 
-function removeParentCodes(diagnosekoder: Diagnosekode[]): Diagnosekode[] {
-    // Collect all codes that are referenced as parent codes
-    const parentCodeSet = new Set<string>();
-    for (const diagnosekode of diagnosekoder) {
-        if (diagnosekode.parentCode) {
-            parentCodeSet.add(diagnosekode.parentCode);
+function removeNotReportable(downloaded: DownloadFormat[]): DownloadFormat[] {
+    const validValues = [undefined, null, "", "Ja"]
+    return downloaded.filter(v => {
+        if(validValues.some(validValue => validValue === v.Rapporteres_til_NPR)) {
+            return v.Rapporteres_til_NPR === "Ja"
+        } else {
+            throw new Error(`Invalid value in "Rapporteres_til_NPR" property (${v.Rapporteres_til_NPR}) in downloaded element "${v.Tekst_med_maksimalt_60_tegn}" (code ${v.Kode})`)
         }
-    }
-
-    // Filter out diagnosekoder whose code is in the parent code set
-    return diagnosekoder.filter(diagnosekode => !parentCodeSet.has(diagnosekode.code));
+    })
 }
 
 function normalizeCode(diagnosekode: Diagnosekode): Diagnosekode {
     // Remove all "." characters from the code
     const normalizedCode = diagnosekode.code.replace(/\./g, '');
 
-    // Validate that the resulting code only contains A-Z and 0-9
-    if (!/^[A-Z0-9]+$/.test(normalizedCode)) {
+    // Validate that the resulting code only contains A-Z, a-z and 0-9
+    if (!/^[A-Za-z0-9]+$/.test(normalizedCode)) {
         throw new Error(`Invalid diagnosis code after normalization: "${normalizedCode}" (original: "${diagnosekode.code}"). Code must contain only letters A-Z and digits 0-9.`);
     }
 

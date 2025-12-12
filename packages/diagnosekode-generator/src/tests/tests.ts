@@ -162,6 +162,7 @@ const testInvalidDownloadProcessing = () => {
     const someInvalid: DownloadFormat[] = [
         {
             "Kode": "X01-0",
+            "Rapporteres_til_NPR": "Ja",
             "Tekst_uten_lengdebegrensning": "xoxox",
         }
     ]
