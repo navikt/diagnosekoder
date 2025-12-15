@@ -27,17 +27,17 @@ jobs:
       NEW_YEAR_VERSION: "1.${{ github.event.inputs.year }}.0"
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
 
       - name: Set new minor version in javascript package
         if: github.event.inputs.version-increment == 'year' && github.event.inputs.year != ''
@@ -48,31 +48,22 @@ jobs:
         run: npm version patch --workspace=@navikt/diagnosekoder
 
       - name: Set new minor version in java package
+        uses: gradle/actions/setup-gradle@v5
+      - name: Increment year version in java package
         if: github.event.inputs.version-increment == 'year' && github.event.inputs.year != ''
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          arguments: |
-            incrementVersion
-            -PoverrideVersion=${{ env.NEW_YEAR_VERSION }}
-          build-root-directory: java/diagnosekoder
-
+        run: ./gradlew incrementVersion -PoverrideVersion=${{ env.NEW_YEAR_VERSION }}
+        working-directory: java/diagnosekoder
       - name: Increment patch version in java package
         if: github.event.inputs.version-increment == 'patch'
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          arguments: |
-            incrementVersion
-          build-root-directory: java/diagnosekoder
+        working-directory: java/diagnosekoder
+        run: ./gradlew incrementVersion
 
       # Test packages after version increment
       - run: npm run test --workspace=@navikt/diagnosekoder
 
       - name: Test java package
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          arguments: |
-            test
-          build-root-directory: java/diagnosekoder
+        run: ./gradlew test
+        working-directory: java/diagnosekoder
 
       - name: Commit and push changed files
         # We want commits to be attributed to the use initiating the workflow
