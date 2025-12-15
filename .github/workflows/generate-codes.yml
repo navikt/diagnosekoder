@@ -9,13 +9,9 @@ on:
       - main
   workflow_dispatch:
     inputs:
-      icd10-url:
+      valid-after:
         type: string
-        description: New URL to use for icd10 diagnosekoder.
-        required: false
-      icpc2-url:
-        type: string
-        description: New URL to use for icpc2 diagnosekoder.
+        description: New valid-after date to filter out expired diagnose codes with.
         required: false
 
 jobs:
@@ -25,9 +21,9 @@ jobs:
       contents: write # Required for comitting generated codes to the repo.
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: "21"
+          node-version: "24"
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
@@ -36,13 +32,9 @@ jobs:
           distribution: temurin
           java-version: 17
       # If workflow is started manually and user inputs a new url config, write it to the repo before generating codes.
-      - name: Write icd10 url config
-        if: "${{ github.event.inputs.icd10-url != '' }}"
-        run: echo "${{ github.event.inputs.icd10-url }}" > icd10.url.txt
-        working-directory: ./configs
-      - name: Write icpc2 url config
-        if: "${{ github.event.inputs.icpc2-url != '' }}"
-        run: echo "${{ github.event.inputs.icpc2-url }}" > icpc2.url.txt
+      - name: Write valid-after config
+        if: "${{ github.event.inputs.valid-after != '' }}"
+        run: echo "${{ github.event.inputs.valid-after }}" > valid-after.txt
         working-directory: ./configs
       - name: Install dependencies
         run: npm ci --workspaces

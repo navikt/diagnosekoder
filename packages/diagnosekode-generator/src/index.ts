@@ -1,9 +1,9 @@
-import {generateICD10, generateICPC2} from "./generator.js";
+import {generateICD10, generateICPC2} from "./generator.ts";
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import resolveRunDir from "./resolveRunDir.js";
-import {readUrlConfigs} from "./config.js";
-import {ICD10Diagnosekode, ICPC2Diagnosekode} from "@navikt/diagnosekoder";
+import resolveRunDir from "./resolveRunDir.ts";
+import { type Args, readFileArgs, resolveCmdArgs, type Urls } from "./config.ts";
+import type {ICD10Diagnosekode, ICPC2Diagnosekode} from "@navikt/diagnosekoder";
 
 /**
  * Resolves the path to the @navikt/diagnosekoder npm package src dir, where the generated diagnosekode json files for
@@ -44,8 +44,17 @@ async function writeJavaOutput(icd10: ICD10Diagnosekode[], icpc2: ICPC2Diagnosek
 }
 
 async function main() {
-    const urls = await readUrlConfigs();
-    const [icd10, icpc2] = await Promise.all([generateICD10(urls), generateICPC2(urls)]);
+    const urls: Urls = {
+        icpc2: "https://fat.kote.helsedirektoratet.no/api/code-systems/ICPC2/download/JSON",
+        icd10: "https://fat.kote.helsedirektoratet.no/api/code-systems/ICD10/download/JSON"
+    }
+    const defaultValidAfter = new Date("2020-01-01")
+    const fileArgs = await readFileArgs()
+    const cmdArgs = await resolveCmdArgs()
+    const args: Args = {
+        validAfter: cmdArgs.validAfter ?? fileArgs.validAfter
+    }
+    const [icd10, icpc2] = await Promise.all([generateICD10(urls, args.validAfter ?? defaultValidAfter), generateICPC2(urls, args.validAfter ?? defaultValidAfter)]);
     await writeTypescriptOutput(icd10, icpc2)
     await writeJavaOutput(icd10, icpc2)
 }
