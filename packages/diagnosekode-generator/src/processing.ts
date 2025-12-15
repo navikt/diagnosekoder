@@ -1,8 +1,13 @@
-import type { DownloadFormat } from "./DownloadFormat.ts";
+import {
+    type DownloadFormat,
+    type ICD10DownloadFormat,
+    type ICPC2DownloadFormat,
+    isICD10DownloadFormat, isICPC2DownloadFormat
+} from "./DownloadFormat.ts";
 import type { Diagnosekode } from "@navikt/diagnosekoder";
 
 export function processDownloaded(downloaded: DownloadFormat[], validAfter: Date): Diagnosekode[] {
-    return removeExpired(removeNotReportable(downloaded), validAfter)
+    return removeExpired(removeUnwantedDiagnoseCodes(downloaded), validAfter)
         .map(mapJsonToDiagnosekode)
         .map(normalizeCode)
         .toSorted((a, b) => a.code < b.code ? -1 : 1)
@@ -31,7 +36,7 @@ function mapJsonToDiagnosekode(item: DownloadFormat): Diagnosekode {
     };
 }
 
-function removeNotReportable(downloaded: DownloadFormat[]): DownloadFormat[] {
+function removeNotReportableICD10DiagnoseCodes(downloaded: ICD10DownloadFormat[]): ICD10DownloadFormat[] {
     const validValues = [undefined, null, "", "Ja"]
     return downloaded.filter(v => {
         if(validValues.some(validValue => validValue === v.Rapporteres_til_NPR)) {
@@ -40,6 +45,21 @@ function removeNotReportable(downloaded: DownloadFormat[]): DownloadFormat[] {
             throw new Error(`Invalid value in "Rapporteres_til_NPR" property (${v.Rapporteres_til_NPR}) in downloaded element "${v.Tekst_med_maksimalt_60_tegn}" (code ${v.Kode})`)
         }
     })
+}
+
+function removeNonMainICPC2DiagnoseCodes(downloaded: ICPC2DownloadFormat[]): ICPC2DownloadFormat[] {
+    const validValues = ["Diagnoser/sykdommer", "Symptomer og plager"] // All ICP2 values we want to return has one of these values in property "Foreldrekodetekst"
+    return downloaded.filter(v => validValues.some(vv => v.Foreldrekodetekst === vv))
+}
+
+function removeUnwantedDiagnoseCodes(downloaded: DownloadFormat[]): ICD10DownloadFormat[] | ICPC2DownloadFormat[] {
+    if(downloaded.every(isICD10DownloadFormat)) {
+        return removeNotReportableICD10DiagnoseCodes(downloaded)
+    }
+    if(downloaded.every(isICPC2DownloadFormat)) {
+        return removeNonMainICPC2DiagnoseCodes(downloaded)
+    }
+    throw new Error(`Unsupported DownloadFormat data`)
 }
 
 function removeExpired(downloaded: DownloadFormat[], validAfter: Date): DownloadFormat[] {

@@ -1,9 +1,9 @@
-import type { DownloadFormat } from "../DownloadFormat.ts";
+import type { DownloadFormat, ICD10DownloadFormat } from "../DownloadFormat.ts";
 import { processDownloaded } from "../processing.ts";
 import type { Diagnosekode } from "@navikt/diagnosekoder";
 
 const testValidDownloadProcessing = () => {
-    const someDownloaded: DownloadFormat[] = [
+    const someDownloaded: ICD10DownloadFormat[] = [
         {
             "Kode": "I",
             "Tekst_uten_lengdebegrensning": "(A00-B99) Visse infeksjonssykdommer og parasittsykdommer",
@@ -134,7 +134,7 @@ const testValidDownloadProcessing = () => {
         }
     ]
 
-    const diagnosekoder = processDownloaded(someDownloaded)
+    const diagnosekoder = processDownloaded(someDownloaded, new Date("2024-01-01"))
 
 
     const forventaDiagnosekoder: Diagnosekode[] = [
@@ -159,16 +159,16 @@ const testValidDownloadProcessing = () => {
 }
 
 const testInvalidDownloadProcessing = () => {
-    const someInvalid: DownloadFormat[] = [
+    const someInvalid = [
         {
             "Kode": "X01-0",
             "Rapporteres_til_NPR": "Ja",
             "Tekst_uten_lengdebegrensning": "xoxox",
         }
-    ]
+    ] as ICD10DownloadFormat[]
 
     try {
-        processDownloaded(someInvalid)
+        processDownloaded(someInvalid, new Date("2024-01-01"))
         throw "did not fail"
     } catch (e) {
         if(e === "did not fail") {
