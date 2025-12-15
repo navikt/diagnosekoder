@@ -153,7 +153,7 @@ const testValidDownloadProcessing = () => {
         const diagnosekode = diagnosekoder[i];
         const forventaDiagnosekode = forventaDiagnosekoder[i];
         if(diagnosekode.code !== forventaDiagnosekode.code || diagnosekode.text !== forventaDiagnosekode.text) {
-            throw new Error(`Forventa diagnosekode ${forventaDiagnosekode}, fikk ${diagnosekode} (${i})`)
+            throw new Error(`Forventa diagnosekode ${forventaDiagnosekode.code}, fikk ${diagnosekode.code} (${i})`)
         }
     }
 }

@@ -12,7 +12,7 @@ const isStringOrNull = (v: unknown): v is string | null => typeof v === "string"
 
 export const isDownloadFormat = (v: unknown): v is DownloadFormat =>
     typeof v === "object" && v != null &&
-    "Kode" in v && isStringOrNull(v.Kode) &&
+    "Kode" in v && typeof v.Kode === "string" &&
     "Tekst_med_maksimalt_60_tegn" in v && isStringOrNull(v.Tekst_med_maksimalt_60_tegn) &&
     "Tekst_uten_lengdebegrensning" in v && isStringOrNull(v.Tekst_uten_lengdebegrensning) &&
     "Gyldig_fra" in v && isStringOrNull(v.Gyldig_fra) &&
