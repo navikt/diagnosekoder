@@ -1,8 +1,8 @@
 import type { DownloadFormat } from "./DownloadFormat.ts";
 import type { Diagnosekode } from "@navikt/diagnosekoder";
 
-export function processDownloaded(downloaded: DownloadFormat[]): Diagnosekode[] {
-    return removeNotReportable(downloaded)
+export function processDownloaded(downloaded: DownloadFormat[], validAfter: Date): Diagnosekode[] {
+    return removeExpired(removeNotReportable(downloaded), validAfter)
         .map(mapJsonToDiagnosekode)
         .map(normalizeCode)
         .toSorted((a, b) => a.code < b.code ? -1 : 1)
@@ -40,6 +40,10 @@ function removeNotReportable(downloaded: DownloadFormat[]): DownloadFormat[] {
             throw new Error(`Invalid value in "Rapporteres_til_NPR" property (${v.Rapporteres_til_NPR}) in downloaded element "${v.Tekst_med_maksimalt_60_tegn}" (code ${v.Kode})`)
         }
     })
+}
+
+function removeExpired(downloaded: DownloadFormat[], validAfter: Date): DownloadFormat[] {
+    return downloaded.filter(v => v.Gyldig_til == null || (new Date(v.Gyldig_til)).getTime() > validAfter.getTime())
 }
 
 function normalizeCode(diagnosekode: Diagnosekode): Diagnosekode {

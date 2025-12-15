@@ -6,7 +6,7 @@ import type {Urls} from "./config.ts";
 import type { DownloadFormat } from "./DownloadFormat.ts";
 import { processDownloaded } from "./processing.ts";
 
-export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
+export async function generateICPC2(urls: Urls, validAfter: Date): Promise<ICPC2Diagnosekode[]> {
   const workSheetsFromFile = xlsx.parse(await fetchXlsxRemote(urls.icpc2));
   return workSheetsFromFile[0].data
       .slice(1)
@@ -17,9 +17,9 @@ export async function generateICPC2(urls: Urls): Promise<ICPC2Diagnosekode[]> {
       .map(toIcpc2Diagnosekode)
 }
 
-export async function generateICD10(urls: Urls): Promise<ICD10Diagnosekode[]> {
+export async function generateICD10(urls: Urls, validAfter: Date): Promise<ICD10Diagnosekode[]> {
   const downloaded = await fetchJsonRemote(urls.icd10);
-  return processDownloaded(downloaded)
+  return processDownloaded(downloaded, validAfter)
       .map(toIcd10Diagnosekode);
 }
 

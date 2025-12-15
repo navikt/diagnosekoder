@@ -43,9 +43,35 @@ async function writeJavaOutput(icd10: ICD10Diagnosekode[], icpc2: ICPC2Diagnosek
     await writeOutput(resolveJavaOutputDir(), icd10, icpc2)
 }
 
+interface CmdArgs {
+    readonly validAfter: Date | undefined
+}
+
+function resolveCmdArgs(): CmdArgs {
+    let validAfter: Date | undefined;
+    const args = process.argv
+    for(let i = 2; i < args.length; i++) {
+        const arg = args[i]
+        if(arg === "--valid-after") {
+            if(args.length > i) {
+                const argValue = args[i+1]
+                validAfter = new Date(argValue)
+                if(!(validAfter.getFullYear() >= 2020 && validAfter.getFullYear() < 2050)) {
+                    throw new Error(`Invalid --valid-after argument value: ${argValue}`)
+                }
+            } else {
+                throw new Error(`--valid-after argument provided without value`)
+            }
+        }
+    }
+    return {validAfter}
+}
+
 async function main() {
     const urls = await readUrlConfigs();
-    const [icd10, icpc2] = await Promise.all([generateICD10(urls), generateICPC2(urls)]);
+    const defaultValidAfter = new Date("2020-01-01")
+    const cmdArgs = resolveCmdArgs()
+    const [icd10, icpc2] = await Promise.all([generateICD10(urls, cmdArgs.validAfter ?? defaultValidAfter), generateICPC2(urls, cmdArgs.validAfter ?? defaultValidAfter)]);
     await writeTypescriptOutput(icd10, icpc2)
     await writeJavaOutput(icd10, icpc2)
 }
