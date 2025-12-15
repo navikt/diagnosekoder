@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
-    "generate": "node src/index.ts",
+    "generate": "npm run check && node src/index.ts",
     "test": "node src/tests/tests.ts"
   },
   "keywords": [
@@ -30,6 +30,6 @@
     "typescript": "^5.9"
   },
   "engines": {
-    "node": ">= 23"
+    "node": ">= 21"
   }
 }
