@@ -5,11 +5,12 @@ export function processDownloaded(downloaded: DownloadFormat[]): Diagnosekode[] 
     return removeNotReportable(downloaded)
         .map(mapJsonToDiagnosekode)
         .map(normalizeCode)
+        .toSorted((a, b) => a.code < b.code ? -1 : 1)
 }
 
 function mapJsonToDiagnosekode(item: DownloadFormat): Diagnosekode {
     const code = item.Kode;
-    const text = item.Tekst_uten_lengdebegrensning;
+    const text = item.Tekst_med_maksimalt_60_tegn;
 
     if (!code || code.length === 0) {
         throw new Error(`Invalid diagnosis code: code is missing or empty (Kode: "${code || ''}")`);
@@ -22,9 +23,11 @@ function mapJsonToDiagnosekode(item: DownloadFormat): Diagnosekode {
     return {
         code,
         text,
+        /* Vent med å ta dette inn i resultatet. For å enklere sammenligne med tidligere resultat
         parentCode: item.Foreldrekode ?? undefined,
         validFrom: item.Gyldig_fra ?? undefined,
         validTo: item.Gyldig_til ?? undefined,
+         */
     };
 }
 
