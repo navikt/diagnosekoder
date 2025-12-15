@@ -49,6 +49,7 @@ export const resolveCmdArgs = (): Args => {
             if(args.length > i + 1) {
                 const argValue = args[i+1]
                 validAfter = validAfterDateFromString(argValue)
+                i++
             } else {
                 throw new Error(`--valid-after argument provided without value`)
             }
