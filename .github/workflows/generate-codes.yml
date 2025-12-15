@@ -20,17 +20,17 @@ jobs:
     permissions:
       contents: write # Required for comitting generated codes to the repo.
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: 'npm'
           registry-url: "https://npm.pkg.github.com"
           scope: "@navikt"
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
       # If workflow is started manually and user inputs a new url config, write it to the repo before generating codes.
       - name: Write valid-after config
         if: "${{ github.event.inputs.valid-after != '' }}"
@@ -46,12 +46,11 @@ jobs:
       - name: Test javascript package
         run: npm run test --workspace=@navikt/diagnosekoder
 
-      - name: Test java package
-        uses: gradle/gradle-build-action@v2.7.0
-        with:
-          arguments: |
-            test
-          build-root-directory: java/diagnosekoder
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Run tests
+        run: ./gradlew test
+        working-directory: java/diagnosekoder
 
       - name: Commit and push changed files
         # Only do this if workflow was started from manual dispatch:
