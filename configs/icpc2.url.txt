@@ -1,2 +1,0 @@
-https://fat.kote.helsedirektoratet.no/api/code-systems/ICPC2/download/JSON
-

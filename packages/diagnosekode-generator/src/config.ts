@@ -17,14 +17,42 @@ const readStringFromFile = async (filePath: string): Promise<string> => {
     return content.trim()
 }
 
-const readUrlFromFile = async (filePath: string): Promise<URL> => {
-    const str = await readStringFromFile(filePath);
-    return new URL(str);
+export interface Args {
+    readonly validAfter: Date | undefined
 }
 
-export const readUrlConfigs = async (): Promise<Urls> => {
+const validAfterDateFromString = (validAfterString: string | undefined): Date | undefined => {
+    if(validAfterString != null) {
+        const validAfter = new Date(validAfterString)
+        if (!(validAfter.getFullYear() >= 2020 && validAfter.getFullYear() < 2050)) {
+            throw new Error(`Invalid --valid-after argument value: ${validAfterString}`)
+        }
+        return validAfter
+    }
+    return undefined
+}
+
+
+export const readFileArgs = async (): Promise<Args> => {
     const configsDir = resolveConfigsDir()
-    const icd10 = (await readUrlFromFile(path.resolve(configsDir, 'icd10.url.txt'))).toString()
-    const icpc2 = (await readUrlFromFile(path.resolve(configsDir, 'icpc2.url.txt'))).toString()
-    return {icd10, icpc2}
+    const validAfterString = (await readStringFromFile(path.resolve(configsDir, 'valid-after.txt'))).toString()
+    const validAfter = validAfterDateFromString(validAfterString)
+    return {validAfter}
+}
+
+export const resolveCmdArgs = (): Args => {
+    let validAfter: Date | undefined;
+    const args = process.argv
+    for(let i = 2; i < args.length; i++) {
+        const arg = args[i]
+        if(arg === "--valid-after") {
+            if(args.length > i) {
+                const argValue = args[i+1]
+                validAfter = validAfterDateFromString(argValue)
+            } else {
+                throw new Error(`--valid-after argument provided without value`)
+            }
+        }
+    }
+    return {validAfter}
 }

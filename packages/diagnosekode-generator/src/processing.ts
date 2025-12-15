@@ -63,6 +63,7 @@ function removeUnwantedDiagnoseCodes(downloaded: DownloadFormat[]): ICD10Downloa
 }
 
 function removeExpired(downloaded: DownloadFormat[], validAfter: Date): DownloadFormat[] {
+    console.debug(`removing diagnose codes not valid after ${validAfter}`)
     return downloaded.filter(v => v.Gyldig_til == null || (new Date(v.Gyldig_til)).getTime() > validAfter.getTime())
 }
 
