@@ -61,10 +61,6 @@ public class Main {
 
 ## Oppdatering av publiserte diagnosekoder
 
-ICD-10 og ICPC-2 Diagnosekoder hentes fra Direktoratet for e-helse:
- - https://www.ehelse.no/kodeverk-og-terminologi/ICD-10-og-ICD-11
--  https://www.ehelse.no/kodeverk-og-terminologi/ICPC-2
-
 Det kommer normalt ny versjon av diagnosekodene hvert år.
 
 Urler som kodegenerator bruker må da oppdateres og det må publiseres ny pakkeversjon.
@@ -75,7 +71,7 @@ Urler som kodegenerator bruker må da oppdateres og det må publiseres ny pakkev
 
 1. Opprett en ny branch på repoet.
 2. Kjør github action workflow [Generate diagnose codes](https://github.com/navikt/diagnosekoder/actions/workflows/generate-codes.yml) på ny branch.
-   - Fyll inn nye url adresser i input feltene som da kommer frem. 
+   - Fyll inn valid-after dato på formatet `YYYY-mm-dd` for å filtrere bort diagnosekoder utløpt etter denne dato.
 3. Kjør github action workflow  [Increment package versions](https://github.com/navikt/diagnosekoder/actions/workflows/increment-version.yml) på branch du jobber på.
 4. - Velg inkrementeringsmåte _(patch eller year)_. 
    - For årlig oppdatering av nye diagnosekoder, velg _year_ og fyll inn korrekt årstall i inputfeltet for det.
@@ -111,4 +107,4 @@ Spørsmål knyttet til koden eller prosjektet kan stilles som
 
 ### For NAV-ansatte
 
-Interne henvendelser kan sendes via Slack i kanalen [#team-sykmelding](https://nav-it.slack.com/archives/CMA3XV997)
+Interne henvendelser kan sendes via Slack i kanalen [#team-sykmelding](https://nav-it.slack.com/archives/CMA3XV997) eller [#team-sykdom-i-familien](https://nav-it.slack.com/archives/CNGKVQVJ9)
