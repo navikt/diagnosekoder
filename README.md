@@ -6,7 +6,9 @@ inneholder diagnosekoder av type **ICD-10** og **ICPC-2**.
 
 Disse er tenkt brukt i diverse systemer utviklet i NAV.
 
-Informasjonen (diagnosekodene) blir hentet fra https://www.ehelse.no/kodeverk-og-terminologi
+Mer informasjon om disse data finnes her: https://www.ehelse.no/kodeverk-og-terminologi
+
+Informasjonen (diagnosekodene) blir hentet fra api tilgjengeligjort her: https://fat.kote.helsedirektoratet.no/index.html
 
 Det blir vanligvis publisert oppdatert versjon av diagnosekodene hvert år. Når det skjer vil vi publisere ny pakkeversjon.
 
