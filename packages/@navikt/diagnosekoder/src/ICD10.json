@@ -25028,10 +25028,6 @@
         "text": "Primær artrose i andre ledd;bekken/lår"
     },
     {
-        "code": "M1906",
-        "text": "Primær artrose i andre ledd;legg/kne"
-    },
-    {
         "code": "M1907",
         "text": "Primær artrose i andre ledd;ankel/fot/tå"
     },
@@ -25070,10 +25066,6 @@
     {
         "code": "M1915",
         "text": "Posttraum artrose i andre ledd;bekken/lår"
-    },
-    {
-        "code": "M1916",
-        "text": "Posttraum artrose i andre ledd;legg/kne"
     },
     {
         "code": "M1917",
@@ -25116,10 +25108,6 @@
         "text": "Sekundær artrose i andre ledd;bekken/lår"
     },
     {
-        "code": "M1926",
-        "text": "Sekundær artrose i andre ledd;legg/kne"
-    },
-    {
         "code": "M1927",
         "text": "Sekundær artrose i andre ledd;ankel/fot/tå"
     },
@@ -25160,10 +25148,6 @@
         "text": "Annen spesifisert artrose;bekken/lår"
     },
     {
-        "code": "M1986",
-        "text": "Annen spesifisert artrose;legg/kne"
-    },
-    {
         "code": "M1987",
         "text": "Annen spesifisert artrose;ankel/fot/tå"
     },
@@ -25202,10 +25186,6 @@
     {
         "code": "M1995",
         "text": "Uspesifisert artrose;bekken/lår"
-    },
-    {
-        "code": "M1996",
-        "text": "Uspesifisert artrose;legg/kne"
     },
     {
         "code": "M1997",
