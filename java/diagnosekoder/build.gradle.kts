@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val kotlinVersion = "1.9.0"
-val jacksonVersion = "2.15.2"
+val kotlinVersion = "2.2.21"
+val jacksonVersion = "2.19.4"
 
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "2.2.21"
     id("maven-publish")
 }
 
@@ -20,7 +20,7 @@ repositories {
 
 kotlin {
     compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
+        jvmTarget.set(JvmTarget.JVM_21)
     }
 }
 
@@ -70,7 +70,7 @@ tasks.test {
 }
 
 // Used by github action increment-version workflow
-tasks.create("incrementVersion") {
+tasks.register("incrementVersion") {
     group = "my tasks"
     description = "Increments or sets the version number in the version.txt file."
     fun generateVersion(): String {
