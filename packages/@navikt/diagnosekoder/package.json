@@ -2,7 +2,7 @@
   "name": "@navikt/diagnosekoder",
   "version": "1.2026.0",
   "type": "module",
-  "description": "Provides icd10 and icpc2 diagnose codes transformed from excel files published by ehelse.no",
+  "description": "Provides icd10 and icpc2 diagnose codes downloaded from API at https://fat.kote.helsedirektoratet.no/",
   "keywords": [
     "diagnosekode",
     "icd-10",

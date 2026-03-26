@@ -1,7 +1,7 @@
 {
   "name": "diagnosekode-generator",
   "version": "1.0.0",
-  "description": "Download diagnosekode excel files and transform them to json file",
+  "description": "Download diagnosekode from helsedirektoratet API and transform them to json file",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
