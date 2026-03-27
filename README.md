@@ -1,6 +1,6 @@
 # diagnosekoder
 
-Dette prosjektet publiserer en npm pakke [_(@navikt/diagnosekoder)_](https://github.com/navikt/diagnosekoder/pkgs/npm/diagnosekoder) 
+Dette prosjektet publiserer en npm pakke _@navikt/diagnosekoder_ (tilgjengelig på [Github Package Registry](https://github.com/navikt/diagnosekoder/pkgs/npm/diagnosekoder) eller [npmjs](https://www.npmjs.com/package/@navikt/diagnosekoder))
 og en java (kotlin) pakke [_(no.nav.helse.diagnosekoder)_](https://github.com/navikt/diagnosekoder/packages/1919232), som 
 inneholder diagnosekoder av type **ICD-10** og **ICPC-2**.
 
