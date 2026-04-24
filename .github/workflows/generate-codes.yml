@@ -64,3 +64,9 @@ jobs:
           git config --global user.name "$GIT_USER_NAME"
           git diff --quiet || (git add -A && git commit -m "new diagnosekoder generated")
           git push
+
+  sif-code-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: navikt/sif-gha-workflows/.github/actions/sif-code-scan@main
